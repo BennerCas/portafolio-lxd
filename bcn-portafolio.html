@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Benner Castillo — Liderazgo de aprendizaje e innovación</title>
+<meta name="description" content="Convierto necesidades académicas en ecosistemas de aprendizaje medibles y escalables." />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.0/index.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@5.0.0/index.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@1,700&display=swap" />
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  :root{
+    --bg:#050810;
+    --bg-2:#0a0f1e;
+    --line:rgba(255,255,255,.08);
+    --text:#e7ecf3;
+    --muted:#9aa4b2;
+  }
+  *{-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  .font-display{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em}
+  .font-script{font-family:'Dancing Script',cursive}
+  .font-serif-italic{font-family:'Playfair Display',serif;font-style:italic}
+  .glass{
+    background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));
+    border:1px solid var(--line);
+    backdrop-filter:blur(10px);
+  }
+  .chip{
+    display:inline-flex;align-items:center;gap:.4rem;
+    padding:.35rem .75rem;border-radius:999px;
+    background:rgba(94,234,212,.08);
+    border:1px solid rgba(94,234,212,.25);
+    color:#a7f3d0;font-size:.72rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;
+  }
+  .btn-primary{
+    display:inline-flex;align-items:center;gap:.5rem;
+    padding:.85rem 1.4rem;border-radius:12px;
+    background:linear-gradient(135deg,#5eead4,#22d3ee);
+    color:#042f2e;font-weight:600;
+    transition:transform .2s ease, box-shadow .2s ease;
+    box-shadow:0 10px 30px -10px rgba(94,234,212,.5);
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 40px -10px rgba(94,234,212,.6)}
+  .btn-neon-cyan{
+    position:relative;
+    display:inline-flex;align-items:center;gap:.5rem;
+    padding:.85rem 1.4rem;border-radius:12px;
+    background:rgba(34,211,238,.08);
+    color:#22d3ee;font-weight:600;
+    border:1.5px solid #22d3ee;
+    box-shadow:0 0 8px rgba(34,211,238,.6),0 0 18px rgba(34,211,238,.4),inset 0 0 10px rgba(34,211,238,.15);
+    transition:all .25s ease;
+    animation:neonPulse 2.2s ease-in-out infinite;
+  }
+  .btn-neon-cyan:hover{
+    background:rgba(34,211,238,.18);color:#fff;
+    box-shadow:0 0 14px rgba(34,211,238,.9),0 0 30px rgba(34,211,238,.6),0 0 50px rgba(34,211,238,.35),inset 0 0 14px rgba(34,211,238,.25);
+    transform:translateY(-2px);
+  }
+  @keyframes neonPulse{
+    0%,100%{box-shadow:0 0 8px rgba(34,211,238,.6),0 0 18px rgba(34,211,238,.4),inset 0 0 10px rgba(34,211,238,.15)}
+    50%{box-shadow:0 0 12px rgba(34,211,238,.85),0 0 26px rgba(34,211,238,.55),0 0 40px rgba(34,211,238,.3),inset 0 0 14px rgba(34,211,238,.25)}
+  }
+  .card{
+    position:relative;border-radius:18px;padding:1.75rem;
+    background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
+    border:1px solid var(--line);
+    transition:transform .3s ease,border-color .3s ease;
+  }
+  .card:hover{transform:translateY(-4px);border-color:rgba(94,234,212,.35)}
+  .card .num{
+    position:absolute;top:1rem;right:1.25rem;
+    font-family:'Space Grotesk',sans-serif;font-weight:700;
+    font-size:3rem;color:rgba(255,255,255,.05);line-height:1;
+  }
+  .tag{
+    display:inline-block;padding:.25rem .6rem;border-radius:6px;
+    background:rgba(255,255,255,.05);border:1px solid var(--line);
+    font-size:.7rem;color:var(--muted);
+  }
+  .marquee{
+    display:flex;overflow:hidden;mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent);
+  }
+  .marquee-track{
+    display:flex;gap:3rem;animation:scroll 35s linear infinite;flex-shrink:0;padding-right:3rem;
+  }
+  @keyframes scroll{to{transform:translateX(-50%)}}
+  .fade-up{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+  .fade-up.in{opacity:1;transform:none}
+  .timeline-line{
+    position:absolute;left:15px;top:0;bottom:0;width:2px;
+    background:linear-gradient(180deg,rgba(94,234,212,.6),rgba(94,234,212,0));
+  }
+  .timeline-dot{
+    position:absolute;left:8px;top:6px;width:16px;height:16px;border-radius:50%;
+    background:var(--bg);border:2px solid #5eead4;box-shadow:0 0 0 4px rgba(94,234,212,.15);
+  }
+  .section-title{font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em}
+  .accent-line{width:40px;height:2px;background:linear-gradient(90deg,#5eead4,#22d3ee)}
+  .mobile-menu{transform:translateY(-100%);transition:transform .35s ease}
+  .mobile-menu.open{transform:translateY(0)}
+  .field{
+    width:100%;padding:.9rem 1rem;border-radius:12px;
+    background:rgba(255,255,255,.03);border:1px solid var(--line);
+    color:var(--text);font-size:.95rem;transition:border-color .2s ease,background .2s ease;
+  }
+  .field:focus{outline:none;border-color:rgba(94,234,212,.6);background:rgba(94,234,212,.04)}
+  ::-webkit-scrollbar{width:10px;height:10px}
+  ::-webkit-scrollbar-track{background:var(--bg)}
+  ::-webkit-scrollbar-thumb{background:#1f2a40;border-radius:10px}
+  ::-webkit-scrollbar-thumb:hover{background:#2a3a5a}
+  .modal-backdrop{position:fixed;inset:0;background:rgba(5,8,15,.75);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:100;padding:1rem}
+  .modal-backdrop.open{display:flex}
+  .text-gradient{background:linear-gradient(135deg,#5eead4,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* NAV */
+  .nav-script{font-family:'Dancing Script',cursive;font-size:1.75rem;color:#fff;font-weight:700}
+  .nav-link{color:#67e8f9;font-size:.9rem;font-weight:500;transition:color .2s ease}
+  .nav-link:hover{color:#fff}
+  .nav-contact-btn{background:#fff;color:#050810;font-weight:700;font-size:.8rem;letter-spacing:.15em;padding:.7rem 1.5rem;border-radius:999px;transition:all .2s ease}
+  .nav-contact-btn:hover{background:#67e8f9;transform:translateY(-1px)}
+
+  /* HERO */
+  .hero-bg-img{
+    position:absolute;inset:0;
+    background-image:url('https://raw.githubusercontent.com/BennerCas/headshot/77c662b1ad35d117aa6a646d4ef77821e90722d6/Untitleddesign2-ezgif.com-optimize.gif');
+    background-size:cover;background-position:center;background-repeat:no-repeat;
+    z-index:0;
+  }
+  .hero-dark-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(5,8,15,.75) 0%,rgba(5,8,15,.6) 40%,rgba(5,8,15,.85) 100%);
+    z-index:1;
+  }
+  .hero-content-layer{position:relative;z-index:2}
+  .hero-idea-panel{
+    background:linear-gradient(180deg,rgba(10,18,35,.95),rgba(8,14,28,.98));
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:20px;
+    padding:2rem;
+    backdrop-filter:blur(16px);
+    box-shadow:0 25px 60px -15px rgba(0,0,0,.7);
+    position:relative;overflow:hidden;
+  }
+  .hero-idea-panel::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(103,232,247,.4),transparent);
+  }
+  .quote-mark{font-family:'Playfair Display',serif;font-size:4rem;line-height:1;color:#67e8f9;opacity:.7}
+
+  /* Propuesta de Valor */
+  #productos .prod-stage-btn{min-height:120px;padding:1rem}
+  @media(min-width:640px){#productos .prod-stage-btn{min-height:140px;padding:1.25rem}}
+  @media(min-width:1024px){#productos .prod-stage-btn{min-height:150px;padding:1.5rem}}
+  #productos-detail h4{font-size:.875rem;font-weight:700;letter-spacing:.05em;margin-top:1.5rem;margin-bottom:.75rem;color:var(--stage-color,#22d3ee);text-transform:uppercase}
+  @media(min-width:640px){#productos-detail h4{font-size:1rem;margin-top:2rem}}
+  #productos-detail p{margin-bottom:.75rem;line-height:1.7}
+  #productos-detail ol{padding-left:1.5rem;margin:.75rem 0}
+  #productos-detail ol li{margin-bottom:.5rem;line-height:1.6}
+
+  @keyframes cycleGlow{0%,100%{filter:drop-shadow(0 0 0 rgba(34,211,238,0))}50%{filter:drop-shadow(0 0 14px rgba(34,211,238,.55))}}
+  @keyframes dataTransfer{to{stroke-dashoffset:-100}}
+  #cycleCircular svg circle.data-stream{animation:dataTransfer 1.6s linear infinite}
+  #cycleCircular svg circle:first-child{animation:cycleGlow 3.5s ease-in-out infinite}
+  #cycleNodes button{width:128px;min-height:128px;padding:14px;border-radius:9999px;font-size:15px;line-height:1.15;transition:transform .3s ease,box-shadow .3s ease}
+  #cycleNodes button:hover,#cycleNodes button.scale-125{box-shadow:0 0 22px currentColor}
+  #cyclePipeline button{min-width:118px;min-height:74px;transition:transform .3s ease,box-shadow .3s ease}
+  #cyclePipeline button:hover,#cyclePipeline button.is-active{transform:translateY(-3px) scale(1.04);box-shadow:0 0 22px currentColor}
+  #cyclePipeline button.is-active{background:rgba(34,211,238,.12)}
+
+  .exp-card{cursor:pointer}
+  .exp-card:hover{border-color:rgba(94,234,212,.5)!important}
+  .exp-card .exp-link{transition:all .25s ease}
+  .exp-card:hover .exp-link{color:#5eead4;gap:.35rem}
+
+  .exp-modal-backdrop{position:fixed;inset:0;background:rgba(5,8,15,.82);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:200;padding:1rem;animation:fadeIn .3s ease}
+  .exp-modal-backdrop.open{display:flex}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  @keyframes slideUp{from{opacity:0;transform:translateY(30px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .exp-modal-content{animation:slideUp .4s ease;max-width:640px;width:100%;max-height:90vh;overflow-y:auto;background:linear-gradient(180deg,rgba(15,23,42,.98),rgba(10,14,26,.98));border:1px solid rgba(94,234,212,.2);border-radius:24px;padding:2rem;position:relative;box-shadow:0 30px 80px -20px rgba(0,0,0,.6),0 0 40px -10px rgba(94,234,212,.15)}
+  @media(max-width:640px){.exp-modal-content{padding:1.5rem;border-radius:20px}}
+  .exp-modal-content::-webkit-scrollbar{width:6px}
+  .exp-modal-content::-webkit-scrollbar-thumb{background:rgba(94,234,212,.3);border-radius:10px}
+  .exp-modal-glow{position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(94,234,212,.12),transparent 70%);pointer-events:none}
+
+  .edu-card{transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
+  .edu-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px -15px rgba(0,0,0,.5)}
+
+  @keyframes popIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+  .success-popup{animation:popIn .35s cubic-bezier(.34,1.56,.64,1)}
+  .success-check{animation:checkDraw .6s ease .2s both}
+  @keyframes checkDraw{from{stroke-dashoffset:50}to{stroke-dashoffset:0}}
+
+  @media(max-width:768px){
+    .card .num{font-size:2.25rem}
+    #cycleNodes button{width:90px;min-height:90px;padding:10px;font-size:12px}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-4 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-3">
+      <span class="nav-script">Benner Castillo</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8">
+      <a href="#productos" class="nav-link">Propuesta de Valor</a>
+      <a href="#know-how" class="nav-link">Know How</a>
+      <a href="#metodo" class="nav-link">Implementación</a>
+      <a href="#aporte" class="nav-link">Contribución</a>
+      <a href="#evidencias" class="nav-link">Evidencias</a>
+    </nav>
+    <div class="hidden lg:flex items-center gap-3">
+      <a href="#contacto" class="nav-contact-btn">CONTACTO</a>
+    </div>
+    <button id="burger" class="lg:hidden w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-white" aria-label="Menú">
+      <i data-lucide="menu" class="w-5 h-5"></i>
+    </button>
+  </div>
+  <div id="mobileMenu" class="mobile-menu lg:hidden fixed inset-x-0 top-[64px] bg-slate-950/95 backdrop-blur-xl border-b border-white/10">
+    <nav class="flex flex-col p-6 gap-1 text-base">
+      <a href="#productos" class="mob-link py-3 border-b border-white/5 text-cyan-300">Propuesta de Valor</a>
+      <a href="#know-how" class="mob-link py-3 border-b border-white/5 text-cyan-300">Know How</a>
+      <a href="#metodo" class="mob-link py-3 border-b border-white/5 text-cyan-300">Implementación</a>
+      <a href="#aporte" class="mob-link py-3 border-b border-white/5 text-cyan-300">Contribución</a>
+      <a href="#evidencias" class="mob-link py-3 border-b border-white/5 text-cyan-300">Evidencias</a>
+      <a href="#trayectoria" class="mob-link py-3 border-b border-white/5 text-cyan-300">Trayectoria</a>
+      <a href="#educacion" class="mob-link py-3 border-b border-white/5 text-cyan-300">Educación</a>
+      <a href="#contacto" class="mt-4 nav-contact-btn text-center justify-center">CONTACTO</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="top" class="relative min-h-screen flex items-center overflow-hidden">
+  <div class="hero-bg-img"></div>
+  <div class="hero-dark-overlay"></div>
+  
+  <div class="hero-content-layer w-full max-w-7xl mx-auto px-5 md:px-8 pt-24 pb-16 md:pt-32 md:pb-20">
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+      
+      <div class="lg:col-span-7 fade-up">
+        <div class="flex items-center gap-2 mb-6">
+          <i data-lucide="target" class="w-4 h-4 text-cyan-300"></i>
+          <span class="text-cyan-300 text-xs md:text-sm font-bold tracking-[0.2em] uppercase">Liderazgo de aprendizaje e innovación</span>
+        </div>
+        
+        <h1 class="text-white text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black leading-[1.1] tracking-tight">
+          Convierto necesidades académicas en ecosistemas de aprendizaje medibles y escalables.
+        </h1>
+        
+        <p class="mt-6 text-base md:text-lg text-slate-300 leading-relaxed max-w-2xl">
+          Integro liderazgo, diseño curricular e instruccional, datos e inteligencia artificial para conducir iniciativas desde el diagnóstico hasta la implementación y la mejora continua.
+        </p>
+        
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#productos" class="btn-primary">Conocer mi propuesta</a>
+          <a href="https://wa.me/51990085118?text=Benner%20vengo%20de%20tu%20portafolio%2C%20mi%20nombre%20es" target="_blank" rel="noopener" class="btn-neon-cyan">Contacto Inmediato</a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 fade-up">
+        <div class="hero-idea-panel">
+          <div class="quote-mark mb-2">"</div>
+          <div class="text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase text-slate-400 mb-4">Idea Central</div>
+          <p class="text-white text-lg md:text-xl lg:text-2xl font-bold leading-snug tracking-tight">
+            "Saber qué debe hacerse, por qué, con quién, cómo medirlo y cómo llevarlo a escala."
+          </p>
+          <div class="mt-8 flex items-center gap-3">
+            <div class="h-0.5 w-10 bg-cyan-400"></div>
+            <span class="text-xs md:text-sm text-slate-300 font-medium">Visión Estratégica</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROPUESTA DE VALOR -->
+<section id="productos" class="border-t border-white/5 bg-slate-900/50 px-4 py-16 sm:px-6 sm:py-24 lg:py-32">
+ <div class="mx-auto max-w-6xl">
+  <div class="text-center mb-10 sm:mb-12">
+   <div class="inline-flex items-center gap-2.5 rounded-full border border-cyan-400/40 bg-cyan-950/40 px-4 sm:px-5 py-1.5 backdrop-blur-sm">
+    <span class="h-2 w-2 rounded-full bg-cyan-400 animate-pulse"></span>
+    <p class="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-cyan-300">PROPUESTA DE VALOR</p>
+   </div>
+   <h2 class="mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight px-2">
+    De la estrategia institucional a experiencias de aprendizaje que producen evidencia, mejora y transformación
+   </h2>
+   <div class="mt-10 sm:mt-12 text-left">
+    <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-cyan-400/30 bg-gradient-to-r from-cyan-950/60 via-slate-900 to-slate-950 p-5 sm:p-6 md:p-8 shadow-xl shadow-cyan-950/30">
+     <div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-cyan-500/10 blur-2xl"></div>
+     <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5">
+      <div class="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-xl sm:rounded-2xl border border-cyan-300/30 bg-cyan-400/10 text-cyan-300">
+       <i data-lucide="target" class="h-6 w-6 sm:h-7 sm:w-7"></i>
+      </div>
+      <div>
+       <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-cyan-300">Propósito Central</span>
+       <p class="mt-1 text-lg sm:text-xl md:text-2xl font-black text-white leading-snug">"Convierto necesidades institucionales en sistemas y experiencias de aprendizaje que las personas pueden aplicar, la institución puede medir y los equipos pueden mejorar y escalar."</p>
+      </div>
+     </div>
+    </div>
+    <div class="my-6 sm:my-8 flex justify-center">
+     <div class="flex flex-col items-center">
+      <div class="h-6 sm:h-8 w-0.5 bg-gradient-to-b from-cyan-400 to-purple-400 animate-pulse"></div>
+      <span class="rounded-full bg-slate-900 px-3 py-1 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-cyan-300 border border-slate-700">Flujo de Ejecución y Metodología</span>
+      <div class="h-6 sm:h-8 w-0.5 bg-gradient-to-b from-purple-400 to-indigo-400"></div>
+     </div>
+    </div>
+    <div class="grid gap-4 sm:gap-6 md:grid-cols-3">
+     <div class="group relative flex flex-col justify-between rounded-xl sm:rounded-2xl border border-white/10 bg-slate-950 p-5 sm:p-6 transition-all duration-300 hover:border-cyan-400/50 hover:bg-slate-900/80 hover:-translate-y-1 shadow-lg">
+      <div>
+       <div class="mb-3 sm:mb-4 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-lg sm:rounded-xl bg-cyan-950 border border-cyan-300/20 text-cyan-300"><i data-lucide="compass" class="h-5 w-5 sm:h-6 sm:w-6"></i></div>
+       <h3 class="text-base sm:text-lg font-bold text-white mb-2">Diagnóstico y Alineación</h3>
+       <p class="text-xs sm:text-sm leading-relaxed text-slate-300">Comprendo el contexto, identifico brechas y priorizo oportunidades para alinear el aprendizaje con los objetivos institucionales. A partir de esa visión, articulo equipos, especialistas, contenidos, metodologías, datos y tecnología para diseñar e implementar soluciones pertinentes y sostenibles.</p>
+      </div>
+      <div class="mt-5 sm:mt-6 flex flex-wrap gap-1.5 pt-3 sm:pt-4 border-t border-white/5">
+       <span class="rounded-md border border-cyan-300/20 bg-cyan-300/5 px-2 py-0.5 text-[10px] sm:text-[11px] font-medium text-cyan-200">Contexto</span>
+       <span class="rounded-md border border-cyan-300/20 bg-cyan-300/5 px-2 py-0.5 text-[10px] sm:text-[11px] font-medium text-cyan-200">Brechas</span>
+       <span class="rounded-md border border-cyan-300/20 bg-cyan-300/5 px-2 py-0.5 text-[10px] sm:text-[11px] font-medium text-cyan-200">Alineamiento</span>
+      </div>
+     </div>
+     <div class="group relative flex flex-col justify-between rounded-xl sm:rounded-2xl border border-white/10 bg-slate-950 p-5 sm:p-6 transition-all duration-300 hover:border-purple-400/50 hover:bg-slate-900/80 hover:-translate-y-1 shadow-lg">
+      <div>
+       <div class="mb-3 sm:mb-4 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-lg sm:rounded-xl bg-purple-950 border border-purple-300/20 text-purple-300"><i data-lucide="sparkles" class="h-5 w-5 sm:h-6 sm:w-6"></i></div>
+       <h3 class="text-base sm:text-lg font-bold text-white mb-2">Diseño e Innovación con IA</h3>
+       <p class="text-xs sm:text-sm leading-relaxed text-slate-300">Integro diseño curricular, diseño instruccional y experiencias centradas en las personas. Utilizo evidencia para tomar decisiones y aplico inteligencia artificial y vibe coding para acelerar la investigación, el prototipado y la validación, preservando siempre el criterio humano, la ética y la calidad.</p>
+      </div>
+      <div class="mt-5 sm:mt-6 flex flex-wrap gap-1.5 pt-3 sm:pt-4 border-t border-white/5">
+       <span class="rounded-md border border-purple-300/20 bg-purple-300/5 px-2 py-0.5 text-[10px] sm:text-[11px] font-medium text-purple-200">IA Generativa</span>
+       <span class="rounded-md border border-purple-300/20 bg-purple-300/5 px-2 py-0.5 text-[10px] sm:text-[11px] font-medium text-purple-200">Vibe Coding</span>
+       <span class="rounded-md border border-purple-300/20 bg-purple-300/5 px-2 py-0.5 text-[10px] sm:text-[11px] font-medium text-purple-200">Criterio Humano</span>
+      </div>
+     </div>
+     <div class="group relative flex flex-col justify-between rounded-xl sm:rounded-2xl border border-white/10 bg-slate-950 p-5 sm:p-6 transition-all duration-300 hover:border-emerald-400/50 hover:bg-slate-900/80 hover:-translate-y-1 shadow-lg">
+      <div>
+       <div class="mb-3 sm:mb-4 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-lg sm:rounded-xl bg-emerald-950 border border-emerald-300/20 text-emerald-300"><i data-lucide="award" class="h-5 w-5 sm:h-6 sm:w-6"></i></div>
+       <h3 class="text-base sm:text-lg font-bold text-white mb-2">Evidencia de Experiencia</h3>
+       <p class="text-xs sm:text-sm leading-relaxed text-slate-300">Mi experiencia incluye la creación de una universidad corporativa, la formación comercial y técnica de más de 100 vendedores de más de seis marcas vehiculares y el desarrollo de soluciones digitales para contextos diversos.</p>
+      </div>
+      <div class="mt-5 sm:mt-6 flex flex-wrap gap-1.5 pt-3 sm:pt-4 border-t border-white/5">
+       <span class="rounded-md border border-emerald-300/20 bg-emerald-300/5 px-2 py-0.5 text-[10px] sm:text-[11px] font-medium text-emerald-200">Univ. Corporativa</span>
+       <span class="rounded-md border border-emerald-300/20 bg-emerald-300/5 px-2 py-0.5 text-[10px] sm:text-[11px] font-medium text-emerald-200">100+ Vendedores</span>
+       <span class="rounded-md border border-emerald-300/20 bg-emerald-300/5 px-2 py-0.5 text-[10px] sm:text-[11px] font-medium text-emerald-200">6+ Marcas</span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div id="know-how" class="mt-10 sm:mt-12 mb-4 flex justify-center scroll-mt-24">
+   <div class="flex flex-col items-center">
+    <div class="h-6 sm:h-8 w-0.5 bg-gradient-to-b from-transparent to-cyan-400 animate-pulse"></div>
+    <span class="rounded-full bg-slate-900 px-3 py-1 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-cyan-300 border border-slate-700">KNOW HOW</span>
+    <div class="h-6 sm:h-8 w-0.5 bg-gradient-to-b from-cyan-400 to-transparent"></div>
+   </div>
+  </div>
+  <nav id="products-stage-nav" class="grid gap-2 sm:gap-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 mb-8 sm:mb-10 mt-4" aria-label="Seleccionar etapa"></nav>
+  <div id="products-detail" class="rounded-xl sm:rounded-2xl lg:rounded-[2rem] border border-white/10 bg-slate-950/80 p-4 sm:p-6 md:p-8 lg:p-10" aria-live="polite"></div>
+  <div class="mt-16 sm:mt-24 mb-12 sm:mb-16 mx-auto max-w-3xl text-center px-4 sm:px-6">
+   <p class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-relaxed text-white italic tracking-tight">"Una estrategia genera valor cuando se convierte en una experiencia que las personas pueden aplicar, la institución puede medir y los equipos pueden mejorar y escalar."</p>
+   <div class="mt-6 sm:mt-8 flex justify-center items-center gap-3 sm:gap-4">
+    <div class="h-px w-12 sm:w-16 bg-cyan-300/50"></div>
+    <div class="h-2 w-2 rounded-full bg-cyan-300"></div>
+    <div class="h-px w-12 sm:w-16 bg-cyan-300/50"></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- IMPLEMENTACIÓN -->
+<section id="metodo" class="border-y border-white/10 bg-slate-950 py-20">
+ <div class="mx-auto max-w-6xl px-6">
+  <div class="mb-8 pb-6 text-center flex flex-col items-center">
+   <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">IMPLEMENTACIÓN</p>
+   <h2 class="mt-3 text-4xl font-black text-white">Ciclo de Mejora Continua</h2>
+   <p class="mt-4 max-w-2xl text-slate-300 text-lg">Una metodología estructurada para asegurar que cada iniciativa pase de la idea a la medición de resultados tangibles.</p>
+   <div class="mt-6 flex flex-wrap justify-center gap-3">
+    <button id="cyclePlay" type="button" class="flex items-center gap-2 rounded-xl border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-xs font-semibold text-cyan-300 hover:bg-cyan-300/20">
+     <i data-lucide="pause" class="h-4 w-4"></i><span>Pausar ciclo</span>
+    </button>
+    <button id="cycleLayout" type="button" class="flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900 px-4 py-2 text-xs font-semibold text-slate-300 hover:text-white">
+     <i data-lucide="layout-grid" class="h-4 w-4"></i><span>Vista lineal</span>
+    </button>
+   </div>
+  </div>
+  <div id="cycleCircular" class="relative mx-auto flex aspect-square w-full max-w-[700px] items-center justify-center">
+   <svg class="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 500 500">
+    <circle cx="250" cy="250" r="185" fill="none" stroke="#1e293b" stroke-width="2" stroke-dasharray="6 6"></circle>
+    <circle id="cycleArc" cx="250" cy="250" r="185" fill="none" stroke="#22d3ee" stroke-width="5" stroke-linecap="round" stroke-dasharray="1162" stroke-dashoffset="1162" transform="rotate(-90 250 250)"></circle>
+    <circle cx="250" cy="250" r="185" fill="none" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 98" stroke-dashoffset="0" transform="rotate(-90 250 250)" class="data-stream" opacity=".9"></circle>
+   </svg>
+   <div class="z-10 w-72 text-center">
+    <span id="cycleBadge" class="rounded-full border border-cyan-300/30 bg-cyan-300/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-cyan-300"></span>
+    <div id="cycleIcon" class="mx-auto my-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-cyan-300 shadow-lg"></div>
+    <h3 id="cycleTitle" class="text-2xl font-black text-white"></h3>
+    <p id="cycleDescription" class="mt-2 min-h-[58px] text-sm leading-relaxed text-slate-300"></p>
+    <div class="mt-4 flex items-center justify-between border-t border-slate-800/70 pt-3">
+     <button id="cyclePrev" type="button" class="rounded-xl border border-slate-800 bg-slate-900 p-2 text-slate-300"><i data-lucide="chevron-left" class="h-4 w-4"></i></button>
+     <div id="cycleDots" class="flex gap-1.5"></div>
+     <button id="cycleNext" type="button" class="rounded-xl border border-slate-800 bg-slate-900 p-2 text-slate-300"><i data-lucide="chevron-right" class="h-4 w-4"></i></button>
+    </div>
+   </div>
+   <div id="cycleNodes" class="pointer-events-none absolute inset-0"></div>
+  </div>
+  <div id="cycleLinear" class="hidden">
+   <div id="cyclePipeline" class="flex flex-wrap justify-center gap-3"></div>
+   <div class="mx-auto mt-8 max-w-xl rounded-3xl border border-slate-800 bg-slate-900/80 p-6 text-center">
+    <span id="linearBadge" class="text-xs font-bold uppercase text-cyan-300"></span>
+    <div id="linearIcon" class="mx-auto my-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-300/10 text-cyan-300"></div>
+    <h3 id="linearTitle" class="text-xl font-bold text-white"></h3>
+    <p id="linearDescription" class="mt-2 text-sm leading-relaxed text-slate-300"></p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- CONTRIBUCIÓN -->
+<section id="aporte" class="relative py-20 md:py-28 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-3xl fade-up">
+      <div class="flex items-center gap-3 text-xs tracking-widest uppercase text-teal-300">
+        <span class="accent-line"></span> Contribución estratégica
+      </div>
+      <h2 class="section-title text-3xl md:text-5xl mt-4">Áreas de impacto donde genero valor medible.</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-5 mt-12">
+      <div class="card fade-up">
+        <div class="w-12 h-12 rounded-xl bg-teal-400/10 border border-teal-400/30 flex items-center justify-center mb-5"><i data-lucide="layers" class="w-5 h-5 text-teal-300"></i></div>
+        <h3 class="font-display text-xl font-semibold">Ecosistemas de Aprendizaje</h3>
+        <p class="text-slate-400 text-sm mt-3 leading-relaxed">Articular necesidades, capacidades, rutas formativas, acompañamiento y evaluación dentro de una visión institucional.</p>
+      </div>
+      <div class="card fade-up">
+        <div class="w-12 h-12 rounded-xl bg-cyan-400/10 border border-cyan-400/30 flex items-center justify-center mb-5"><i data-lucide="cpu" class="w-5 h-5 text-cyan-300"></i></div>
+        <h3 class="font-display text-xl font-semibold">Innovación Educativa con IA</h3>
+        <p class="text-slate-400 text-sm mt-3 leading-relaxed">Convertir casos de uso prioritarios en prototipos responsables, recursos funcionales y capacidades transferibles.</p>
+      </div>
+      <div class="card fade-up">
+        <div class="w-12 h-12 rounded-xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center mb-5"><i data-lucide="bar-chart-3" class="w-5 h-5 text-amber-300"></i></div>
+        <h3 class="font-display text-xl font-semibold">Análisis de Datos</h3>
+        <p class="text-slate-400 text-sm mt-3 leading-relaxed">Transformar datos académicos y retroalimentación en decisiones, indicadores y ciclos de mejora continua.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVIDENCIAS -->
+<section id="evidencias" class="relative py-20 md:py-28 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 fade-up">
+      <div class="max-w-2xl">
+        <div class="flex items-center gap-3 text-xs tracking-widest uppercase text-teal-300"><span class="accent-line"></span> Evidencias</div>
+        <h2 class="section-title text-3xl md:text-5xl mt-4">Experiencias que demuestran capacidad de diseño e implementación.</h2>
+      </div>
+      <a href="#contacto" class="btn-ghost text-sm"><i data-lucide="arrow-right" class="w-4 h-4"></i> Conversar sobre un proyecto</a>
+    </div>
+    <div class="grid md:grid-cols-3 gap-5 mt-12">
+      <article class="card fade-up group">
+        <span class="num">01</span>
+        <div class="aspect-[16/10] rounded-xl overflow-hidden mb-5 bg-gradient-to-br from-teal-500/20 to-cyan-500/10 border border-white/5 flex items-center justify-center"><i data-lucide="building-2" class="w-12 h-12 text-teal-300/70"></i></div>
+        <div class="text-xs text-teal-300 tracking-widest uppercase">Caso 01</div>
+        <h3 class="font-display text-xl font-semibold mt-1">Universidad corporativa</h3>
+        <p class="text-slate-400 text-sm mt-3 leading-relaxed">Participación en la construcción de un sistema institucional de aprendizaje para una microfinanciera, conectando necesidades organizacionales, arquitectura formativa e implementación.</p>
+        <div class="flex flex-wrap gap-2 mt-5"><span class="tag">Estrategia</span><span class="tag">Aprendizaje</span><span class="tag">Escalamiento</span></div>
+      </article>
+      <article class="card fade-up group">
+        <span class="num">02</span>
+        <div class="aspect-[16/10] rounded-xl overflow-hidden mb-5 bg-gradient-to-br from-cyan-500/20 to-blue-500/10 border border-white/5 flex items-center justify-center"><i data-lucide="car" class="w-12 h-12 text-cyan-300/70"></i></div>
+        <div class="text-xs text-cyan-300 tracking-widest uppercase">Caso 02</div>
+        <h3 class="font-display text-xl font-semibold mt-1">Formación multimarcas</h3>
+        <p class="text-slate-400 text-sm mt-3 leading-relaxed">Diseño y facilitación de formación comercial y técnica para más de 100 vendedores de más de seis marcas, con adaptación a productos, perfiles y territorios diferentes.</p>
+        <div class="flex flex-wrap gap-2 mt-5"><span class="tag">100+ participantes</span><span class="tag">6+ marcas</span><span class="tag">Multiterritorio</span></div>
+      </article>
+      <article class="card fade-up group">
+        <span class="num">03</span>
+        <div class="aspect-[16/10] rounded-xl overflow-hidden mb-5 bg-gradient-to-br from-amber-500/20 to-orange-500/10 border border-white/5 flex items-center justify-center"><i data-lucide="wand-2" class="w-12 h-12 text-amber-300/70"></i></div>
+        <div class="text-xs text-amber-300 tracking-widest uppercase">Caso 03</div>
+        <h3 class="font-display text-xl font-semibold mt-1">Prototipado con IA</h3>
+        <p class="text-slate-400 text-sm mt-3 leading-relaxed">Creación de soluciones digitales mediante arquitectura de información, diseño de experiencia, inteligencia artificial generativa y vibe coding.</p>
+        <div class="flex flex-wrap gap-2 mt-5"><span class="tag">IA aplicada</span><span class="tag">UX</span><span class="tag">Vibe coding</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TRAYECTORIA -->
+<section id="trayectoria" class="relative py-20 md:py-28 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-3xl fade-up">
+      <div class="flex items-center gap-3 text-xs tracking-widest uppercase text-teal-300"><span class="accent-line"></span> Trayectoria</div>
+      <h2 class="section-title text-3xl md:text-5xl mt-4">Experiencia profesional.</h2>
+      <p class="mt-4 text-slate-400 text-sm md:text-base">Haz clic en cada experiencia para ver el detalle de mi rol e impacto.</p>
+    </div>
+    <div class="relative mt-12 pl-10">
+      <div class="timeline-line"></div>
+      <div class="relative mb-8 fade-up">
+        <div class="timeline-dot"></div>
+        <div class="card exp-card" onclick="openExpModal('exp-brainmark')">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+            <div>
+              <div class="text-xs text-teal-300 tracking-widest uppercase">Ene 2020 — Ene 2025</div>
+              <h3 class="font-display text-xl font-semibold mt-1">Especialista en Desarrollo Profesional</h3>
+              <div class="text-slate-400 text-sm">BRAINMARK.PE · Lima, Perú</div>
+            </div>
+            <span class="exp-link text-sm text-teal-300 flex items-center gap-1.5">Ver impacto <i data-lucide="arrow-up-right" class="w-4 h-4"></i></span>
+          </div>
+        </div>
+      </div>
+      <div class="relative mb-8 fade-up">
+        <div class="timeline-dot"></div>
+        <div class="card exp-card" onclick="openExpModal('exp-servi')">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+            <div>
+              <div class="text-xs text-teal-300 tracking-widest uppercase">Jun 2021 — Nov 2021</div>
+              <h3 class="font-display text-xl font-semibold mt-1">Gerente Comercial</h3>
+              <div class="text-slate-400 text-sm">SERVI USA CORP · Florida, US (Remoto)</div>
+            </div>
+            <span class="exp-link text-sm text-teal-300 flex items-center gap-1.5">Ver impacto <i data-lucide="arrow-up-right" class="w-4 h-4"></i></span>
+          </div>
+        </div>
+      </div>
+      <div class="relative mb-8 fade-up">
+        <div class="timeline-dot"></div>
+        <div class="card exp-card" onclick="openExpModal('exp-santaisabel')">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+            <div>
+              <div class="text-xs text-teal-300 tracking-widest uppercase">May 2019 — Nov 2019</div>
+              <h3 class="font-display text-xl font-semibold mt-1">Director del Centro de Formación</h3>
+              <div class="text-slate-400 text-sm">COOP. SANTA ISABEL · Piura, Perú</div>
+            </div>
+            <span class="exp-link text-sm text-teal-300 flex items-center gap-1.5">Ver impacto <i data-lucide="arrow-up-right" class="w-4 h-4"></i></span>
+          </div>
+        </div>
+      </div>
+      <div class="relative mb-8 fade-up">
+        <div class="timeline-dot"></div>
+        <div class="card exp-card" onclick="openExpModal('exp-radio')">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+            <div>
+              <div class="text-xs text-teal-300 tracking-widest uppercase">Mar 2019 — Nov 2019</div>
+              <h3 class="font-display text-xl font-semibold mt-1">Director de Inv. y Desarrollo</h3>
+              <div class="text-slate-400 text-sm">RADIO CUTIVALÚ · Piura, Perú</div>
+            </div>
+            <span class="exp-link text-sm text-teal-300 flex items-center gap-1.5">Ver impacto <i data-lucide="arrow-up-right" class="w-4 h-4"></i></span>
+          </div>
+        </div>
+      </div>
+      <div class="relative mb-8 fade-up">
+        <div class="timeline-dot"></div>
+        <div class="card exp-card" onclick="openExpModal('exp-interamericana')">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+            <div>
+              <div class="text-xs text-teal-300 tracking-widest uppercase">Nov 2016 — May 2019</div>
+              <h3 class="font-display text-xl font-semibold mt-1">Capacitador y Formador de Ventas</h3>
+              <div class="text-slate-400 text-sm">INTERAMERICANA NORTE · Piura, Perú</div>
+            </div>
+            <span class="exp-link text-sm text-teal-300 flex items-center gap-1.5">Ver impacto <i data-lucide="arrow-up-right" class="w-4 h-4"></i></span>
+          </div>
+        </div>
+      </div>
+      <div class="relative fade-up">
+        <div class="timeline-dot"></div>
+        <div class="card exp-card" onclick="openExpModal('exp-anden')">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+            <div>
+              <div class="text-xs text-teal-300 tracking-widest uppercase">Mar 2016 — Nov 2016</div>
+              <h3 class="font-display text-xl font-semibold mt-1">Capacitador Comercial</h3>
+              <div class="text-slate-400 text-sm">ANDEN CAPITAL · Arequipa, Perú</div>
+            </div>
+            <span class="exp-link text-sm text-teal-300 flex items-center gap-1.5">Ver impacto <i data-lucide="arrow-up-right" class="w-4 h-4"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARCAS -->
+<section class="relative py-16 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="text-center fade-up">
+      <div class="text-xs tracking-widest uppercase text-teal-300">Marcas impulsadas</div>
+      <p class="text-slate-400 text-sm mt-2">Partners y organizaciones con las que he colaborado.</p>
+    </div>
+    <div class="marquee mt-8">
+      <div class="marquee-track font-display text-xl md:text-2xl text-slate-500">
+        <span>Claro</span><span>·</span><span>Nike</span><span>·</span><span>Montalvo</span><span>·</span><span>Cinemark</span><span>·</span>
+        <span>Kia</span><span>·</span><span>Mitsubishi</span><span>·</span><span>Peugeot</span><span>·</span><span>Volkswagen</span><span>·</span>
+        <span>Scotiabank</span><span>·</span><span>Entel</span><span>·</span><span>Interamericana Norte</span><span>·</span>
+        <span>Coopac Santa Isabel</span><span>·</span><span>INPE</span><span>·</span><span>Bodytech</span><span>·</span>
+        <span>América TV</span><span>·</span><span>Club Grau</span><span>·</span>
+      </div>
+      <div class="marquee-track font-display text-xl md:text-2xl text-slate-500" aria-hidden="true">
+        <span>Claro</span><span>·</span><span>Nike</span><span>·</span><span>Montalvo</span><span>·</span><span>Cinemark</span><span>·</span>
+        <span>Kia</span><span>·</span><span>Mitsubishi</span><span>·</span><span>Peugeot</span><span>·</span><span>Volkswagen</span><span>·</span>
+        <span>Scotiabank</span><span>·</span><span>Entel</span><span>·</span><span>Interamericana Norte</span><span>·</span>
+        <span>Coopac Santa Isabel</span><span>·</span><span>INPE</span><span>·</span><span>Bodytech</span><span>·</span>
+        <span>América TV</span><span>·</span><span>Club Grau</span><span>·</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCACIÓN -->
+<section id="educacion" class="relative py-20 md:py-28 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-3xl fade-up">
+      <div class="flex items-center gap-3 text-xs tracking-widest uppercase text-teal-300"><span class="accent-line"></span> Educación</div>
+      <h2 class="section-title text-3xl md:text-5xl mt-4">Formación especializada.</h2>
+      <p class="mt-5 text-slate-300">Certificaciones y credenciales técnicas que respaldan mi nivel competitivo en ecosistemas digitales y metodologías de aprendizaje.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+
+      <div class="edu-card card p-6 rounded-2xl border-t-4 border-t-blue-500 flex flex-col bg-slate-900 border border-white/10 shadow-lg fade-up">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="p-2 bg-white rounded flex gap-1"><div class="w-3 h-3 bg-[#f25022]"></div><div class="w-3 h-3 bg-[#7fba00]"></div></div>
+          <h3 class="text-white font-bold text-lg">Microsoft Education</h3>
+        </div>
+        <p class="text-green-400 text-xs font-bold tracking-wider mb-3">IA PARA LA EDUCACIÓN</p>
+        <p class="text-gray-400 text-sm leading-relaxed flex-grow">Permite a los educadores mejorar la enseñanza aprovechando Microsoft 365 Copilot Chat, ofreciendo estrategias de diseño rápido y prácticas de IA responsables para personalizar la instrucción y crear materiales atractivos.</p>
+        <div class="mt-4 pt-4 border-t border-white/10">
+          <p class="text-xs text-gray-400 leading-relaxed"><span class="text-green-400 font-bold">SKILLS:</span> IA Generativa, Copilot Chat, Prompt Design, Personalización del Aprendizaje.</p>
+        </div>
+      </div>
+
+      <div class="edu-card card p-6 rounded-2xl border-t-4 border-t-blue-400 flex flex-col bg-slate-900 border border-white/10 shadow-lg fade-up">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="p-2 bg-white rounded flex gap-1"><div class="w-3 h-3 bg-[#00a4ef]"></div><div class="w-3 h-3 bg-[#ffb900]"></div></div>
+          <h3 class="text-white font-bold text-lg">Microsoft Education</h3>
+        </div>
+        <p class="text-green-400 text-xs font-bold tracking-wider mb-3">M365 COPILOT IN EDUCATION</p>
+        <p class="text-gray-400 text-sm leading-relaxed flex-grow">Capacitación y dominio en la integración de Microsoft 365 Copilot en entornos educativos, optimizando la creación de contenidos, el análisis de datos académicos y la asistencia inteligente en tiempo real.</p>
+        <div class="mt-4 pt-4 border-t border-white/10">
+          <p class="text-xs text-gray-400 leading-relaxed"><span class="text-green-400 font-bold">SKILLS:</span> M365 Copilot, Productividad Automatizada, Prompt Engineering, Análisis de Datos.</p>
+        </div>
+      </div>
+
+      <div class="edu-card card p-6 rounded-2xl border-t-4 border-t-yellow-400 flex flex-col bg-slate-900 border border-white/10 shadow-lg fade-up">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="px-2 py-1 bg-white rounded font-bold text-gray-800 text-sm tracking-tighter">Google <span class="text-blue-500">Cloud</span></div>
+          <h3 class="text-white font-bold text-lg">Google for Education</h3>
+        </div>
+        <p class="text-green-400 text-xs font-bold tracking-wider mb-3">WORKSPACE & CLOUD EDUCATOR</p>
+        <p class="text-gray-400 text-sm leading-relaxed flex-grow">Especialización integral en Google Workspace para la Educación Superior y certificación oficial como Educator, optimizando la gestión de plataformas en la nube y herramientas de productividad.</p>
+        <div class="mt-4 pt-4 border-t border-white/10">
+          <p class="text-xs text-gray-400 leading-relaxed"><span class="text-green-400 font-bold">SKILLS:</span> Cloud Management, Google Workspace, EdTech, Gestión de Productividad.</p>
+        </div>
+      </div>
+
+      <div class="edu-card card p-6 rounded-2xl border-t-4 border-t-gray-300 flex flex-col bg-slate-900 border border-white/10 shadow-lg fade-up">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="p-1 bg-white rounded-full">
+            <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+          </div>
+          <h3 class="text-white font-bold text-lg">Github Education</h3>
+        </div>
+        <p class="text-green-400 text-xs font-bold tracking-wider mb-3">GITHUB COPILOT</p>
+        <p class="text-gray-400 text-sm leading-relaxed flex-grow">El asistente de IA que construye contigo. Genera código, gestiona tareas y explora tus proyectos en un solo lugar con GitHub Copilot. GPT-4.1.</p>
+        <div class="mt-4 pt-4 border-t border-white/10">
+          <p class="text-xs text-gray-400 leading-relaxed"><span class="text-green-400 font-bold">SKILLS:</span> Generación de Código, Gestión de Tareas, Github Copilot, GPT-4.1.</p>
+        </div>
+      </div>
+
+      <div class="edu-card card p-6 rounded-2xl border-t-4 border-t-purple-500 flex flex-col bg-slate-900 border border-white/10 shadow-lg fade-up">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="px-2 py-1 bg-gradient-to-r from-cyan-500 to-purple-500 rounded font-bold text-white text-sm">Canva</div>
+          <h3 class="text-white font-bold text-lg">Ecosistema Canva</h3>
+        </div>
+        <p class="text-green-400 text-xs font-bold tracking-wider mb-3">DISEÑO Y AULA DIGITAL</p>
+        <ul class="text-gray-400 text-sm leading-relaxed space-y-1 list-disc list-inside flex-grow">
+          <li>AI in the classroom</li>
+          <li>Teacher & Graphic Design Essentials</li>
+          <li>The field guide to Human-Centered Design</li>
+          <li>Marketing with Canva</li>
+        </ul>
+        <div class="mt-4 pt-4 border-t border-white/10">
+          <p class="text-xs text-gray-400 leading-relaxed"><span class="text-green-400 font-bold">SKILLS:</span> Diseño Visual, IA en el Aula, Human-Centered Design, Marketing.</p>
+        </div>
+      </div>
+
+      <div class="edu-card card p-6 rounded-2xl border-t-4 border-t-yellow-300 flex flex-col bg-slate-900 border border-white/10 shadow-lg fade-up">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="px-2 py-1 bg-yellow-400 rounded font-black text-black text-sm tracking-tighter">miro</div>
+          <h3 class="text-white font-bold text-lg">Miro Academy</h3>
+        </div>
+        <p class="text-green-400 text-xs font-bold tracking-wider mb-3">INNOVACIÓN Y DIAGRAMACIÓN</p>
+        <ul class="text-gray-400 text-sm leading-relaxed space-y-1 list-disc list-inside flex-grow">
+          <li>Technical Diagramming</li>
+          <li>Innovation Essentials</li>
+          <li>Miro Users Support & Essentials</li>
+        </ul>
+        <div class="mt-4 pt-4 border-t border-white/10">
+          <p class="text-xs text-gray-400 leading-relaxed"><span class="text-green-400 font-bold">SKILLS:</span> Diagramación Técnica, Pensamiento Visual, Innovación Ágil.</p>
+        </div>
+      </div>
+
+      <div class="edu-card card p-6 rounded-2xl border-t-4 border-t-green-500 flex flex-col bg-slate-900 border border-white/10 shadow-lg fade-up">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="px-2 py-1 bg-[#1a1a2e] border border-green-500/30 rounded font-bold text-white text-sm">Edutin Academy</div>
+          <h3 class="text-white font-bold text-lg">Ciencias del Aprendizaje</h3>
+        </div>
+        <p class="text-green-400 text-xs font-bold tracking-wider mb-3">LEARNING SCIENCES ✅</p>
+        <p class="text-gray-400 text-sm leading-relaxed flex-grow">Proyecto de investigación enfocado en el aprendizaje y resiliencia en adultos resilientes. Competencias en Diseño centrado en las personas e Investigación y Desarrollo (I+D).</p>
+        <div class="mt-4 pt-4 border-t border-white/10">
+          <p class="text-xs text-gray-400 leading-relaxed"><span class="text-green-400 font-bold">SKILLS:</span> Andragogía, Investigación (I+D), Diseño Centrado en las Personas.</p>
+        </div>
+      </div>
+
+      <div class="edu-card card p-6 rounded-2xl border-t-4 border-t-orange-500 flex flex-col bg-slate-900 border border-white/10 shadow-lg fade-up">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="px-2 py-1 bg-orange-500 rounded font-bold text-white text-sm flex items-center gap-1"><span class="w-3 h-3 rounded-full border-2 border-white"></span> HubSpot</div>
+          <h3 class="text-white font-bold text-lg">HubSpot Academy</h3>
+        </div>
+        <p class="text-green-400 text-xs font-bold tracking-wider mb-3">SELLING SKILLS & SALES OPS</p>
+        <p class="text-gray-400 text-sm leading-relaxed flex-grow">Especialización en metodologías de ventas inbound, operaciones comerciales estratégicas y optimización del embudo de conversión para organizaciones.</p>
+        <div class="mt-4 pt-4 border-t border-white/10">
+          <p class="text-xs text-gray-400 leading-relaxed"><span class="text-green-400 font-bold">SKILLS:</span> Inbound Sales, Operaciones Comerciales (Sales Ops), Análisis de Embudos.</p>
+        </div>
+      </div>
+
+      <div class="edu-card card p-6 rounded-2xl border-t-4 border-t-yellow-500 flex flex-col bg-slate-900 border border-white/10 shadow-lg fade-up">
+        <div class="flex items-center gap-3 mb-2">
+          <div class="px-2 py-1 bg-yellow-500 text-black rounded font-black text-sm tracking-widest">BiiA LAB</div>
+          <h3 class="text-white font-bold text-lg">Neurociencias</h3>
+        </div>
+        <p class="text-yellow-500/90 text-xs italic mb-4">Certificación avalada directamente por <strong>Jürgen Klarić</strong></p>
+        <p class="text-green-400 text-xs font-bold tracking-wider mb-3">NEUROMARKETING & ANTROPOLOGÍA DEL CONSUMIDOR</p>
+        <p class="text-gray-400 text-sm leading-relaxed flex-grow">Análisis profundo de los detonantes cognitivos y antropológicos del consumidor para estructurar estrategias comerciales precisas (82h).</p>
+        <div class="mt-4 pt-4 border-t border-white/10">
+          <p class="text-xs text-gray-400 leading-relaxed"><span class="text-green-400 font-bold">SKILLS:</span> Neuromarketing, Antropología, Comportamiento del Consumidor.</p>
+        </div>
+      </div>
+
+      <div class="edu-card card p-6 rounded-2xl border-t-4 border-t-yellow-500 flex flex-col bg-slate-900 border border-white/10 shadow-lg fade-up">
+        <div class="flex items-center gap-3 mb-2">
+          <div class="px-2 py-1 bg-yellow-500 text-black rounded font-black text-sm tracking-widest">BiiA LAB</div>
+          <h3 class="text-white font-bold text-lg">Master Trainer</h3>
+        </div>
+        <p class="text-yellow-500/90 text-xs italic mb-4">Certificación avalada directamente por <strong>Jürgen Klarić</strong></p>
+        <p class="text-green-400 text-xs font-bold tracking-wider mb-3">MASTER TRAINER NEUROVENTAS</p>
+        <p class="text-gray-400 text-sm leading-relaxed flex-grow">Formación de alto impacto enfocada en la aplicación de neurociencia para optimizar la persuasión, el liderazgo y el cierre efectivo de ventas.</p>
+        <div class="mt-4 pt-4 border-t border-white/10">
+          <p class="text-xs text-gray-400 leading-relaxed"><span class="text-green-400 font-bold">SKILLS:</span> Neuroventas, Persuasión, Liderazgo, Cierre Efectivo.</p>
+        </div>
+      </div>
+
+      <div class="edu-card card p-6 rounded-2xl border-t-4 border-t-yellow-500 flex flex-col bg-slate-900 border border-white/10 shadow-lg fade-up">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="px-2 py-1 bg-yellow-500 text-black rounded font-black text-sm tracking-widest">BiiA LAB</div>
+          <h3 class="text-white font-bold text-lg">Habilidades Directivas</h3>
+        </div>
+        <p class="text-green-400 text-xs font-bold tracking-wider mb-3">DESARROLLO INTEGRAL Y DIGITAL</p>
+        <ul class="text-gray-400 text-sm leading-relaxed space-y-1 list-disc list-inside flex-grow">
+          <li>Habla en Público y Storytelling (Nivel I y II)</li>
+          <li>Marca Personal y Fortificación del Ser</li>
+          <li>Neuroempoderamiento del Ser</li>
+          <li>Marketing Digital y Neuropublicidad</li>
+          <li>Entrenamiento Completo en Ventas</li>
+        </ul>
+        <div class="mt-4 pt-4 border-t border-white/10">
+          <p class="text-xs text-gray-400 leading-relaxed"><span class="text-green-400 font-bold">SKILLS:</span> Storytelling, Marca Personal, Marketing Digital, Ventas.</p>
+        </div>
+      </div>
+
+      <div class="edu-card card p-6 rounded-2xl border-t-4 border-t-rose-500 flex flex-col bg-slate-900 border border-white/10 shadow-lg fade-up">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="px-2 py-1 bg-rose-500 text-white rounded font-black text-sm tracking-tighter">n8n</div>
+          <h3 class="text-white font-bold text-lg">Workflow Automation</h3>
+        </div>
+        <p class="text-green-400 text-xs font-bold tracking-wider mb-3">ADVANCED AUTOMATION</p>
+        <p class="text-gray-400 text-sm leading-relaxed flex-grow">Creación y orquestación de automatizaciones avanzadas multiplataforma (Low-Code/No-Code). Diseño de flujos de trabajo escalables para conectar APIs, bases de datos y herramientas empresariales, reduciendo el trabajo manual y optimizando los ecosistemas operativos.</p>
+        <div class="mt-4 pt-4 border-t border-white/10">
+          <p class="text-xs text-gray-400 leading-relaxed"><span class="text-green-400 font-bold">SKILLS:</span> Automatización de Flujos, Integración de APIs, Arquitectura Low-Code.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-14 glass rounded-3xl p-6 md:p-10 fade-up">
+      <div class="flex flex-col md:flex-row md:items-center gap-6">
+        <div class="shrink-0">
+          <div class="font-display text-5xl md:text-6xl font-semibold text-gradient">+8400</div>
+          <div class="text-xs tracking-widest uppercase text-slate-400 mt-1">horas de formación</div>
+        </div>
+        <div class="h-px md:h-16 md:w-px bg-white/10"></div>
+        <p class="text-slate-300 italic leading-relaxed">"Mi propuesta de valor se basa en una estrategia de mejora continua. Mi aprendizaje proactivo y mi enfoque pragmático me permiten mantener la congruencia, generar soluciones efectivas y construir relaciones sinérgicas desde una visión integral."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="relative py-20 md:py-28 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="grid lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-5 fade-up">
+        <div class="flex items-center gap-3 text-xs tracking-widest uppercase text-teal-300"><span class="accent-line"></span> Hablemos</div>
+        <h2 class="section-title text-3xl md:text-5xl mt-4">Transformar el aprendizaje es construir capacidad institucional.</h2>
+        <p class="mt-5 text-slate-300 leading-relaxed">Creo que una iniciativa de aprendizaje genera verdadero valor cuando responde a una necesidad concreta, moviliza las capacidades de las personas y produce resultados que la institución puede observar, medir y mejorar.</p>
+        <p class="mt-4 text-slate-300 leading-relaxed">Mi aporte consiste en integrar mi experiencia con el conocimiento especializado del equipo para convertir prioridades institucionales en sistemas y experiencias de aprendizaje pertinentes, sostenibles y escalables.</p>
+        <div class="mt-8 glass rounded-2xl p-5">
+          <div class="text-xs tracking-widest uppercase text-teal-300 mb-2">Contacto directo</div>
+          <a href="https://wa.me/51990085118?text=Benner%20vengo%20de%20tu%20portafolio%2C%20mi%20nombre%20es" target="_blank" rel="noopener" class="flex items-center gap-3 text-slate-200 hover:text-cyan-300 transition">
+            <i data-lucide="message-circle" class="w-5 h-5"></i> +51 990 085 118
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-7 fade-up">
+        <form id="contactForm" action="https://formspree.io/f/mgogjyed" method="POST" class="glass rounded-3xl p-6 md:p-8 space-y-4" novalidate>
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde el portafolio de Benner Castillo" />
+          <div>
+            <label class="text-xs tracking-widest uppercase text-slate-400">Nombre completo *</label>
+            <input required name="nombre" class="field mt-2" placeholder="Tu nombre" />
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="text-xs tracking-widest uppercase text-slate-400">Correo electrónico *</label>
+              <input required type="email" name="email" class="field mt-2" placeholder="tu@correo.com" />
+            </div>
+            <div>
+              <label class="text-xs tracking-widest uppercase text-slate-400">WhatsApp / Teléfono *</label>
+              <input required name="telefono" class="field mt-2" placeholder="+51 999 999 999" />
+            </div>
+          </div>
+          <div>
+            <label class="text-xs tracking-widest uppercase text-slate-400">Mensaje *</label>
+            <textarea required name="mensaje" rows="5" class="field mt-2" placeholder="Cuéntame sobre tu proyecto o necesidad institucional..."></textarea>
+          </div>
+          <label class="flex items-start gap-3 text-xs text-slate-400 leading-relaxed">
+            <input required type="checkbox" name="privacidad" class="mt-1 accent-teal-400" />
+            <span>He leído y acepto la política de privacidad. Autorizo el tratamiento de mis datos personales de acuerdo con la <a href="#" onclick="openPrivacyModal();return false" class="text-teal-300 underline">Ley N° 29733 de Protección de Datos Personales</a> para fines de contacto institucional y profesional. *</span>
+          </label>
+          <button type="submit" id="submitBtn" class="btn-primary w-full justify-center">
+            <i data-lucide="send" class="w-4 h-4"></i> <span>Enviar mensaje</span>
+          </button>
+          <div id="formError" class="hidden text-sm text-red-400 text-center"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-white/5 py-10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+    <div>© 2026 Benner Castillo · Diseño de portafolio y estrategia académica.</div>
+    <div class="flex items-center gap-5">
+      <a href="#" onclick="openPrivacyModal();return false" class="hover:text-teal-300">Política de Privacidad</a>
+      <a href="#" class="hover:text-teal-300">Impacto & Acciones</a>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL EXPERIENCIA -->
+<div id="expModalBackdrop" class="exp-modal-backdrop" onclick="if(event.target===this)closeExpModal()">
+  <div class="exp-modal-content">
+    <div class="exp-modal-glow"></div>
+    <div class="relative">
+      <button onclick="closeExpModal()" class="absolute top-0 right-0 w-10 h-10 rounded-xl border border-white/10 flex items-center justify-center hover:bg-white/5 hover:border-teal-400/40 transition z-10" aria-label="Cerrar"><i data-lucide="x" class="w-4 h-4"></i></button>
+      <div class="flex items-center gap-2 mb-4">
+        <i data-lucide="calendar" class="w-4 h-4 text-teal-300"></i>
+        <span id="expModalDate" class="text-xs font-bold tracking-widest uppercase text-teal-300"></span>
+      </div>
+      <h3 id="expModalTitle" class="font-display text-2xl md:text-3xl font-bold text-white leading-tight pr-10"></h3>
+      <div class="mt-3 flex items-center gap-2">
+        <i data-lucide="building-2" class="w-4 h-4 text-slate-400"></i>
+        <span id="expModalCompany" class="text-sm text-slate-300 font-medium"></span>
+      </div>
+      <div class="my-5 h-px bg-gradient-to-r from-teal-400/40 via-cyan-400/20 to-transparent"></div>
+      <div class="flex items-center gap-2 mb-3">
+        <i data-lucide="zap" class="w-4 h-4 text-amber-300"></i>
+        <span class="text-xs font-bold tracking-widest uppercase text-amber-300">Impacto y rol</span>
+      </div>
+      <div id="expModalImpact" class="text-sm md:text-base text-slate-300 leading-relaxed space-y-3"></div>
+      <div class="mt-6 pt-5 border-t border-white/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <button onclick="closeExpModal();scrollToContact()" class="btn-primary text-sm">
+          <i data-lucide="message-circle" class="w-4 h-4"></i> Conversar sobre esto
+        </button>
+        <button onclick="closeExpModal()" class="text-xs text-slate-400 hover:text-white transition flex items-center gap-1">Cerrar <i data-lucide="x" class="w-3 h-3"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL PRIVACIDAD -->
+<div id="privacyModal" class="modal-backdrop" onclick="if(event.target===this)closePrivacyModal()">
+  <div class="glass rounded-2xl max-w-lg w-full p-6 md:p-8">
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="font-display text-xl font-semibold">Política de Privacidad</h3>
+      <button onclick="closePrivacyModal()" class="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center hover:bg-white/5"><i data-lucide="x" class="w-4 h-4"></i></button>
+    </div>
+    <div class="text-sm text-slate-300 space-y-3 leading-relaxed">
+      <p>De conformidad con la Ley de Protección de Datos Personales y su Reglamento, se le informa que los datos proporcionados en este formulario serán tratados de forma estrictamente confidencial.</p>
+      <p><strong class="text-white">Finalidad:</strong> Los datos recopilados serán utilizados única y exclusivamente para gestionar su consulta, contactarle y brindarle la información solicitada en el ámbito profesional e institucional.</p>
+      <p><strong class="text-white">Seguridad:</strong> Se han adoptado las medidas técnicas necesarias para garantizar la seguridad de sus datos y evitar su alteración, pérdida o acceso no autorizado.</p>
+      <p><strong class="text-white">Derechos ARCO:</strong> Usted puede ejercer en cualquier momento sus derechos de Acceso, Rectificación, Cancelación y Oposición comunicándose a través de este mismo medio.</p>
+    </div>
+    <button onclick="closePrivacyModal()" class="btn-primary w-full justify-center mt-6">Entendido</button>
+  </div>
+</div>
+
+<!-- POPUP CONFIRMACIÓN -->
+<div id="successPopup" class="modal-backdrop" style="z-index:300">
+  <div class="success-popup glass rounded-3xl max-w-md w-full p-8 md:p-10 text-center border border-teal-400/30">
+    <div class="mx-auto w-20 h-20 rounded-full bg-gradient-to-br from-teal-400/20 to-cyan-400/10 border border-teal-400/40 flex items-center justify-center mb-5">
+      <svg class="w-10 h-10 text-teal-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path class="success-check" d="M5 13l4 4L19 7" stroke-dasharray="50" stroke-dashoffset="0"/>
+      </svg>
+    </div>
+    <h3 class="font-display text-2xl md:text-3xl font-bold text-white">¡Gracias!</h3>
+    <p class="mt-3 text-slate-300 leading-relaxed">Tu mensaje ha sido enviado exitosamente. Me pondré en contacto contigo a la brevedad.</p>
+    <button onclick="closeSuccessPopup()" class="btn-primary w-full justify-center mt-6">Aceptar</button>
+  </div>
+</div>
+
+<script>
+  lucide.createIcons();
+
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll',()=>{
+    if(window.scrollY>20){nav.classList.add('bg-slate-950/90','backdrop-blur-xl','border-b','border-white/5')}
+    else{nav.classList.remove('bg-slate-950/90','backdrop-blur-xl','border-b','border-white/5')}
+  });
+
+  const burger=document.getElementById('burger');
+  const mm=document.getElementById('mobileMenu');
+  burger.addEventListener('click',()=>mm.classList.toggle('open'));
+  document.querySelectorAll('.mob-link').forEach(a=>a.addEventListener('click',()=>mm.classList.remove('open')));
+
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.12});
+  document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
+
+  const modalData = {
+    'exp-brainmark': {
+      date: 'Enero 2020 - Enero 2025',
+      title: 'Especialista en Desarrollo Profesional y Aprendizaje Autodirigido',
+      company: 'BRAINMARK.PE',
+      impact: '<p>Colaboro con profesionales para identificar necesidades de desarrollo y diseñar programas de aprendizaje autodirigido. Trabajo estrechamente con Recursos Humanos y líderes para crear un entorno de aprendizaje continuo que favorezca el crecimiento. Utilizo tecnologías digitales para implementar estrategias innovadoras y programas personalizados. Mis habilidades abarcan el diseño de programas efectivos que fomentan el liderazgo y el pensamiento crítico, empoderando a los profesionales a alcanzar su máximo potencial.</p>'
+    },
+    'exp-servi': {
+      date: 'Junio 2021 - Noviembre 2021',
+      title: 'Gerente Comercial',
+      company: 'SERVI USA CORP (Florida, USA)',
+      impact: '<p>Desempeñé un papel fundamental en el impulso del crecimiento de la empresa. Me centré en establecer vínculos comerciales sólidos (B2B) e identificar oportunidades estratégicas. Trabajé con el equipo de ventas asegurando cierres exitosos mediante negociación y presentaciones persuasivas. Destaqué en la construcción de relaciones duraderas basadas en la empatía y la comprensión de las expectativas de los socios clave.</p>'
+    },
+    'exp-santaisabel': {
+      date: 'Mayo 2019 - Noviembre 2019',
+      title: 'Director del Centro de Formación (Univ. Corporativa)',
+      company: 'Cooperativa Santa Isabel',
+      impact: '<p>Lideré proyectos estableciendo una cultura organizacional sólida enfocada en productos financieros innovadores. Creé el área de formación desde cero, definiendo perfiles profesionales e implementando programas personalizados. Construí la infraestructura necesaria para el crecimiento sostenible, logrando encaminar a la organización hacia la certificación #GreatPlaceToWork. Desarrollé manuales de inducción y análisis de mercado para la creación de nuevos productos.</p>'
+    },
+    'exp-radio': {
+      date: 'Marzo 2019 - Noviembre 2019',
+      title: 'Director de Investigación y Desarrollo',
+      company: 'RADIO CUTIVALÚ',
+      impact: '<p>Papel fundamental en la investigación sobre el síndrome de Asperger y proyectos sociales. Coordiné esfuerzos entre familias y organizaciones comunitarias para desarrollar soluciones de bienestar. Utilicé tecnologías de producción de audio para crear contenido educativo. Esta experiencia resaltó mis capacidades de liderazgo, investigación y empatía para abordar las necesidades complejas de las comunidades.</p>'
+    },
+    'exp-interamericana': {
+      date: 'Noviembre 2016 - Mayo 2019',
+      title: 'Capacitador y Formador de Ventas',
+      company: 'INTERAMERICANA NORTE',
+      impact: '<p>Diseñé estructuras educativas para productos, aplicando herramientas para cierres de ventas efectivos. Destaco el diseño de un Plan de Entrenamiento Comercial que personalizó la formación de equipos, mejorando su eficiencia. Evalué y guié equipos, estableciendo procesos de selección. Implementé programas de formación en ventas priorizando la adaptabilidad y comprensión del cliente, logrando un impacto positivo en los resultados B2B y B2C.</p>'
+    },
+    'exp-anden': {
+      date: 'Marzo 2016 - Noviembre 2016',
+      title: 'Capacitador Comercial',
+      company: 'ANDEN CAPITAL',
+      impact: '<p>Como formador comercial, desarrollé relaciones sólidas con el público objetivo, liderando equipos de ventas y creando nuevas oportunidades. Destaco en la comunicación clara de las ventajas de los productos, generando conexiones emocionales. He mejorado las habilidades de venta de los equipos mediante formación y feedback constante, logrando un avance notable en su desempeño y en la optimización de procesos comerciales.</p>'
+    }
+  };
+
+  function openExpModal(id){
+    const data = modalData[id];
+    if(!data) return;
+    document.getElementById('expModalDate').textContent = data.date;
+    document.getElementById('expModalTitle').textContent = data.title;
+    document.getElementById('expModalCompany').textContent = data.company;
+    document.getElementById('expModalImpact').innerHTML = data.impact;
+    document.getElementById('expModalBackdrop').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if(window.lucide) lucide.createIcons();
+  }
+  function closeExpModal(){
+    document.getElementById('expModalBackdrop').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function scrollToContact(){
+    setTimeout(()=>{
+      document.getElementById('contacto').scrollIntoView({behavior:'smooth',block:'start'});
+    },300);
+  }
+
+  const contactForm = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const formError = document.getElementById('formError');
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    formError.classList.add('hidden');
+    formError.textContent = '';
+
+    if(!contactForm.checkValidity()){
+      contactForm.reportValidity();
+      return;
+    }
+
+    const originalHTML = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> <span>Enviando...</span>';
+    if(window.lucide) lucide.createIcons();
+
+    try {
+      const formData = new FormData(contactForm);
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if(response.ok){
+        contactForm.reset();
+        openSuccessPopup();
+      } else {
+        const data = await response.json();
+        if(data.errors && data.errors.length){
+          formError.textContent = data.errors.map(err => err.message).join(', ');
+        } else {
+          formError.textContent = 'Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.';
+        }
+        formError.classList.remove('hidden');
+      }
+    } catch(err) {
+      formError.textContent = 'Error de conexión. Por favor, revisa tu internet e inténtalo nuevamente.';
+      formError.classList.remove('hidden');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalHTML;
+      if(window.lucide) lucide.createIcons();
+    }
+  });
+
+  function openSuccessPopup(){
+    document.getElementById('successPopup').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeSuccessPopup(){
+    document.getElementById('successPopup').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function openPrivacyModal(){document.getElementById('privacyModal').classList.add('open');document.body.style.overflow='hidden'}
+  function closePrivacyModal(){document.getElementById('privacyModal').classList.remove('open');document.body.style.overflow=''}
+
+  document.addEventListener('keydown',(e)=>{
+    if(e.key==='Escape'){
+      closeExpModal();
+      closePrivacyModal();
+      closeSuccessPopup();
+    }
+  });
+
+  const valueStages = [
+    {n:'01',t:'Comprender y priorizar',s:'1. Comprender y priorizar',sub:'Estrategia institucional',desc:'Convertimos necesidades y evidencia en prioridades institucionales claras.',intro:'Etapa en la que se analiza el contexto institucional para identificar necesidades, oportunidades y brechas, comprender a los actores involucrados y determinar qué desafío debe atenderse primero. Su propósito es convertir información dispersa en una prioridad clara, alineada con los objetivos institucionales y sustentada en evidencia.',body:'<h4>1. QUÉ HAGO</h4><p>Comprendo la situación institucional antes de proponer una solución. Analizo los objetivos, las prioridades, los procesos, los actores involucrados y la información disponible para identificar necesidades, oportunidades y brechas de capacidades.</p><p>Facilito conversaciones con autoridades, docentes, estudiantes, especialistas y equipos administrativos para reconocer diferentes perspectivas y distinguir el problema central de sus síntomas. A partir de este análisis, ayudo a formular desafíos concretos, definir resultados esperados y priorizar las iniciativas con mayor valor académico y organizacional.</p><p>Mi función no consiste solamente en recopilar información, sino en convertirla en una comprensión compartida que permita orientar la acción institucional.</p><h4>2. QUÉ HABILIDADES APLICO</h4><p>Pensamiento estratégico. Pensamiento sistémico. Análisis institucional. Diagnóstico de necesidades y brechas. Análisis cuantitativo y cualitativo. Mapeo de actores. Escucha activa. Pensamiento crítico. Formulación de problemas. Facilitación de conversaciones estratégicas. Priorización de iniciativas. Comunicación ejecutiva. Negociación y alineamiento de intereses. Toma de decisiones basada en evidencia.</p><h4>3. QUÉ DECISIÓN FACILITA</h4><ol class="space-y-1"><li>Qué problema o necesidad atender.</li><li>Cuál es su relevancia institucional.</li><li>Qué actores y capacidades se requieren.</li><li>Qué población debe priorizarse.</li><li>Qué resultados se esperan.</li><li>Cuál es la viabilidad de la iniciativa.</li><li>Qué información adicional hace falta.</li><li>Qué riesgos deben considerarse.</li></ol><h4>PREGUNTA DE DECISIÓN</h4><p>¿Qué necesita lograr la institución, para quién y qué capacidades deben desarrollarse para hacerlo posible?</p><h4>RESULTADO ESPERADO</h4><p>Una necesidad institucional claramente definida, sustentada en evidencia y convertida en una prioridad de intervención.</p>',products:[{cat:'DIAGNÓSTICO Y ANÁLISIS',items:['Informe de diagnóstico institucional — Situación actual, problemas, causas, consecuencias, necesidades, restricciones y oportunidades.','Mapa de actores — Autoridades, docentes, estudiantes, administrativos, egresados, empleadores y aliados; influencia, interest y participación.','Matriz de necesidades y brechas — Capacidades actuales y requeridas, brechas, poblaciones afectadas y prioridad.','Mapa de problemas y oportunidades — Problema central, causas, consecuencias y oportunidades de intervención.']},{cat:'PRIORIZACIÓN Y DECISIÓN',items:['Matriz de priorización de iniciativas — Impacto, urgencia, viabilidad, recursos, riesgos y alineamiento institucional.','Ficha de definición del desafío — Necesidad, público, resultado, alcance, exclusiones y criterios de éxito.','Línea base de indicadores — Situación inicial, datos, referencias, brechas de información, fuentes y responsables.']},{cat:'ALINEAMIENTO Y DECISIÓN',items:['Documento de alineamiento estratégico — Objetivos institucionales, modelo educativo, calidad académica y prioridades del Vicerrectorado.','Mapa de riesgos y supuestos — Riesgos académicos, operativos, tecnológicos y de adopción; mitigación inicial.','Resumen ejecutivo para la toma de decisiones — Problema, evidencia, prioridad, alternativas, recomendación y próximo paso.','Entregable integrador: Diagnóstico estratégico de necesidades, brechas y oportunidades de aprendizaje.','Decisión que facilita: qué problema atender primero, para quién, por qué y con qué resultado esperado.']}]},
+    {n:'02',t:'Diseñar el sistema',s:'2. Diseñar el sistema',sub:'Sistema de aprendizaje',desc:'Transformamos la estrategia en una arquitectura coherente de aprendizaje.',intro:'Etapa en la que la necesidad priorizada se traduce en una arquitectura de aprendizaje que articula competencias, resultados, contenidos, metodologías, personas, recursos, tecnología y evaluación. Su propósito es convertir la estrategia institucional en una solución coherente, viable y sostenible.',body:'<h4>1. QUÉ HAGO</h4><p>Traduzco la necesidad priorizada en una arquitectura de aprendizaje coherente. Vinculo los objetivos institucionales con las competencias, los resultados de aprendizaje, los públicos, los contenidos, las metodologías, los recursos, la tecnología y la evaluación.</p><p>Lidero la articulación entre especialistas académicos, diseñadores instruccionales, responsables tecnológicos, facilitadores y áreas administrativas. Establezco criterios comunes para que cada contribución responda a un mismo propósito y se integre dentro de una solución implementable.</p><p>También ayudo a definir las rutas, los programas, los módulos, las modalidades, los responsables y los mecanismos de seguimiento. Mi aporte principal consiste en conectar las capacidades del equipo y asegurar que el sistema conserve coherencia entre estrategia, aprendizaje y resultados.</p><h4>2. QUÉ HABILIDADES APLICO</h4><p>Diseño curricular. Diseño de competencias. Arquitectura de aprendizaje. Alineamiento entre competencias, actividades, evidencias y evaluación. Gestión de proyectos. Planificación. Diseño de procesos. Gestión de recursos. Coordinación multidisciplinaria. Definición de roles y responsabilidades. Selección de metodologías y modalidades. Evaluación de viabilidad. Selección tecnológica. Gestión de riesgos. Delegación. Construcción de acuerdos. Seguimiento de compromisos. Orientación a resultados.</p><h4>3. QUÉ DECISIÓN FACILITA</h4><ol class="space-y-1"><li>Qué competencias desarrollar.</li><li>Qué resultados de aprendizaje alcanzar.</li><li>Qué rutas formativas organizar.</li><li>Qué contenidos y metodologías utilizar.</li><li>Qué modalidad implementar.</li><li>Qué especialistas y equipos integrar.</li><li>Qué recursos y tecnología disponer.</li><li>Cómo evaluar los resultados.</li><li>Qué fases de implementación definir.</li><li>Qué condiciones de sostenibilidad asegurar.</li></ol><h4>PREGUNTA DE DECISIÓN</h4><p>¿Cómo debemos organizar las capacidades, los actores y los recursos para convertir la estrategia institucional en un sistema de aprendizaje viable?</p><h4>RESULTADO ESPERADO</h4><p>Una arquitectura de aprendizaje coherente, con competencias, rutas, responsabilidades, recursos, evaluación y hoja de ruta de implementación.</p>',products:[{cat:'ARQUITECTURA',items:['Arquitectura del sistema de aprendizaje — Propósito, públicos, componentes, programas, modalidades, recursos, responsables y evaluación.','Mapa curricular o mapa de capacidades — Competencias, capacidades, resultados, niveles y experiencias asociadas.','Matriz de alineamiento — Necesidad, competencia, resultado, actividad, evidencia e indicador.']},{cat:'DISEÑO DE RUTAS',items:['Rutas o itinerarios de aprendizaje — Secuencia, progresión, requisitos, duración, modalidad y reconocimiento.','Perfiles de los participantes — Características, saberes previos, necesidades, barreras, motivaciones y contexto.','Diseño macro curricular — Propósito, competencias, ejes, contenidos, estrategias y evaluación.','Modelo instruccional institucional — Principios, metodologías, actividades, recursos, evaluación y adaptación.']},{cat:'PLANIFICACIÓN',items:['Plan de implementación — Fases, actividades, cronograma, hitos, responsables, dependencias y recursos.','Matriz de roles y responsabilidades — Responsable, autoridad, especialistas, equipos y facilitadores.','Requerimientos funcionales y tecnológicos — Plataforma, integraciones, analítica, repositorios, seguridad, soporte y accesibility.','Presupuesto preliminar — Personas, tecnología, producción, facilitación, soporte, evaluación y contingencias.']},{cat:'GOBERNANZA',items:['Modelo de gobernanza — Órgano responsable, aprobación, seguimiento, actualización, cambios y resultados.','Entregable integrador: Arquitectura institucional del sistema de aprendizaje y hoja de ruta de implementación.','Decisión que facilita: cómo organizar capacidades, personas, recursos y tecnología para convertir la estrategia en aprendizaje.']}]},
+    {n:'03',t:'Activar la experiencia',s:'3. Activar la experiencia',sub:'Experiencia de aprendizaje',desc:'Convertimos el sistema en experiencias relevantes, aplicables y adaptadas al contexto.',intro:'Etapa en la que el sistema diseñado se transforma en experiencias concretas que las personas pueden comprender, vivir, practicar y aplicar. Su propósito es hacer que el aprendizaje sea relevante, accesible y adaptable a las características de los participantes y de su contexto.',body:'<h4>1. QUÉ HAGO</h4><p>Transformo la arquitectura del sistema en experiencias que las personas puedan comprender, vivir, practicar y aplicar. Junto con el equipo, convertimos resultados de aprendizaje en actividades, casos, retos, recursos, evaluaciones e interacciones relevantes.</p><p>Procuro que la experiencia responda a las características reales de los participantes: sus conocimientos previos, necesidades, motivaciones, barreras, funciones y contextos. Esto implica adaptar los contenidos y las metodologías según el público, la modalidad, el territorio o el ámbito de aplicación.</p><p>Lidero la coordinación de facilitadores, especialistas, diseñadores y responsables tecnológicos. También utilizo inteligencia artificial y vibe coding para acelerar la investigación, organizar contenidos, explorar alternativas y construir prototipos que puedan validarse antes de invertir en una implementación mayor.</p><p>Mi función es asegurar que el sistema diseñado se convierta en una experiencia clara, aplicable y consistente, sin perder capacidad de adaptación.</p><h4>2. QUÉ HABILIDADES APLICO</h4><p>Diseño instruccional. Diseño de experiencias de aprendizaje. Diseño centrado en las personas. Diseño de recorridos del participante. Facilitación. Comunicación pedagógica. Curación de contenidos. Storytelling. Diseño visual. Diseño de actividades auténticas. Diseño de evaluaciones. Retroalimentación formativa. Experiencia de usuario. Accesibilidad. Adaptación contextual. Prototipado rápido. Inteligencia artificial generativa. Vibe coding. Arquitectura de información. Coordinación de equipos de producción. Supervisión de calidad. Acompañamiento de docentes y facilitadores.</p><h4>3. QUÉ DECISIÓN FACILITA</h4><ol class="space-y-1"><li>Cómo vivirá el participante la experiencia.</li><li>Qué actividades y recursos necesita.</li><li>Qué debe practicar.</li><li>Cómo se comprobará la aplicación.</li><li>Qué elementos deben adaptarse.</li><li>Qué solución o componente conviene prototipar.</li><li>Qué apoyo requerirán docentes y facilitadores.</li><li>Qué apoyo requerirán los participantes.</li></ol><h4>PREGUNTA DE DECISIÓN</h4><p>¿Cómo logramos que las personas comprendan, participen, practiquen y transfieran lo aprendido a su realidad?</p><h4>RESULTADO ESPERADO</h4><p>Una experiencia de aprendizaje validada, acompañada por actividades, recursos, instrumentos y criterios claros de implementación.</p>',products:[{cat:'DISEÑO INSTRUCCIONAL',items:['Journey o recorrido del participante — Antes, ingreso, desarrollo, evaluación, aplicación, seguimiento y momentos críticos.','Diseño instruccional detallado — Resultado, contenido, actividad, metodología, recurso, tiempo, evidencia y retroalimentación.','Guiones instruccionales — Secuencia, mensajes, interacciones, casos, preguntas, actividades y evaluaciones.','Prototipo de la experiencia — Versión navegable, módulo piloto, prueba de concepto, flujo y funcionalidades prioritarias.']},{cat:'RECURSOS',items:['Kit de recursos de aprendizaje — Presentaciones, guías, fichas, videos, infografías, casos, plantillas y descargables.','Guía del docente o facilitador — Objetivos, secuencia, metodología, preguntas, actividades, retroalimentación y contingencias.','Guía del participante — Propósito, ruta, actividades, recursos, evaluaciones, apoyo y finalización.','Banco de casos, problemas y retos — Casos contextualizados, preguntas, criterios de solución y extensiones.']},{cat:'EVALUACIÓN Y TECNOLOGÍA',items:['Instrumentos de evaluación — Rúbricas, listas, pruebas diagnósticas, evaluaciones formativas y finales, autoevaluación y coevaluación.','Plan de adaptación por público o contexto — Perfil, territorio, programa, dominio, modalidad y accesibilidad.','Protocolo de uso de IA — Casos permitidos, responsabilidades, verificación, protección, integridad y supervisión.','Producto digital funcional — Landing page, micrositio, aula, asistente, repositorio, tablero o prototipo con vibe coding.']},{cat:'VALIDACIÓN Y ACOMPAÑAMIENTO',items:['Informe de prueba con usuarios — Perfiles, tareas, dificultades, comentarios, hallazgos y cambios.','Plan de acompañamiento — Inducción, tutoría, soporte, comunicación, seguimiento y comunidades de práctica.','Entregable integrador: Prototipo validado de la experiencia con recursos, instrumentos y guía de implementación.','Decisión que facilita: cómo lograr comprensión, práctica, retroalimentación y transferencia.']}]},
+    {n:'04',t:'Medir y decidir',s:'4. Medir y decidir',sub:'Evidencia',desc:'Transformamos datos y resultados en información útil para decidir.',intro:'Etapa en la que los resultados, evaluaciones y percepciones se convierten en información útil para comprender qué ocurrió, qué cambió y qué requiere atención. Su propósito es fundamentar decisiones, identificar brechas y orientar acciones mediante la combinación de datos, contexto y criterio profesional.',body:'<h4>1. QUÉ HAGO</h4><p>Defino, junto con el equipo, qué evidencias permitirán determinar si la iniciativa está produciendo los resultados esperados. No limito la evaluación a la asistencia, la satisfacción o la cantidad de actividades realizadas. Busco comprender también el aprendizaje, la aplicación, la experiencia y el valor generado para la institución.</p><p>Articulamos indicadores, instrumentos, fuentes de información y mecanismos de seguimiento desde el inicio. Después analizamos los resultados cuantitativos y cualitativos para identificar patrones, brechas, diferencias entre grupos y oportunidades de mejora.</p><p>Mi función consiste en ayudar a transformar datos dispersos en información comprensible, relevante y accionable para quienes deben tomar decisiones.</p><h4>2. QUÉ HABILIDADES APLICO</h4><p>Definición de indicadores. Diseño de instrumentos de evaluación. Analítica de aprendizaje. Análisis cuantitativo y cualitativo. Evaluación de resultados e impacto. Identificación de patrones. Visualización de datos. Elaboración de tableros. Interpretación contextual. Comunicación de hallazgos. Formulación de recomendaciones. Pensamiento analítico. Toma de decisiones basada en evidencia. Ética y confidencialidad de los datos. Presentación ejecutiva. Transparencia. Rendición de cuentas. Seguimiento de decisiones.</p><h4>3. QUÉ DECISIÓN FACILITA</h4><ol class="space-y-1"><li>Si se alcanzaron los resultados esperados.</li><li>Qué aprendizajes se lograron.</li><li>Qué grupos presentan brechas.</li><li>Qué funciona y qué dificultades existen.</li><li>Qué elementos deben revisarse.</li><li>Qué decisiones correctivas deben priorizarse.</li><li>Si corresponde continuar, detener, reformular o ampliar la iniciativa.</li></ol><h4>PREGUNTA DE DECISIÓN</h4><p>¿Qué evidencia demuestra que la experiencia está generando aprendizaje, aplicación y valor institucional?</p><h4>LÓGICA DE TRABAJO</h4><p>Dato + contexto + criterio profesional → decisión → acción → seguimiento.</p><h4>RESULTADO ESPERADO</h4><p>Información confiable y comprensible que permita evaluar resultados, fundamentar decisiones y orientar acciones de mejora.</p>',products:[{cat:'MARCO Y PLANIFICACIÓN',items:['Marco de medición — Objetivos, preguntas, indicadores, fuentes, frecuencia, responsables y criterios.','Matriz de indicadores — Definición, fórmula, línea base, meta, fuente, periodicidad y responsable.','Plan de recolección de datos — Datos, método, momento, responsables, almacenamiento, calidad y confidencialidad.']},{cat:'SEGUIMIENTO',items:['Tablero de seguimiento — Participación, asistencia, finalización, evaluación, progreso, satisfacción, alertas y brechas.','Informe de resultados de aprendizaje — Resultados, metas, grupos, fortalezas, brechas y recomendaciones.','Análisis antes y después — Línea base, resultado, variación, diferencias e interpretación.']},{cat:'ANÁLISIS CUALITATIVO',items:['Informe de experiencia del participante — Percepción, satisfacción, dificultades, relevancia, utilidad, aplicación y comentarios.','Mapa de brechas y alertas — Aprendizajes no logrados, grupos, contenidos, abandono y problemas operativos o tecnológicos.']},{cat:'COMUNICACIÓN Y DECISIÓN',items:['Reporte ejecutivo para autoridades — Hallazgos, indicadores, riesgos, decisiones y acciones.','Registro de decisiones basadas en evidencia — Información, hallazgo, decisión, responsable, acción, revisión y resultado.','Repositorio de evidencias — Productos, evaluaciones, rúbricas, reportes, retroalimentación y trazabilidad.','Informe de retorno o valor institucional — Alcance, resultados, eficiencia, aplicación, contribución y continuity.','Entregable integrador: Tablero de indicadores e informe ejecutivo para decisiones académicas.','Decisión que facilita: qué funciona, qué no, por qué y qué acción adoptar.','Lógica de uso: dato + contexto + criterio profesional → decisión → acción → seguimiento.']}]},
+    {n:'05',t:'Mejora y escalar',s:'5. Mejorar y escalar',sub:'Mejora y escalamiento',desc:'Convertimos los aprendizajes en mejoras, capacidades transferibles y condiciones para crecer.',intro:'Etapa en la que la evidencia y los aprendizajes obtenidos se utilizan para ajustar, fortalecer y documentar la solución. Su propósito es transferir capacidades, asegurar la sostenibilidad y establecer las condiciones necesarias para ampliar el alcance sin perder calidad ni pertinencia.',body:'<h4>1. QUÉ HAGO</h4><p>Utilizo los resultados, la retroalimentación y los aprendizajes de la implementación para fortalecer la solución. Coordino con el equipo la revisión de contenidos, metodologías, recursos, procesos, tecnología e instrumentos de evaluación.</p><p>Ayudo a distinguir qué elementos deben conservarse, cuáles necesitan modificarse y cuáles pueden estandarizarse. Documentamos las buenas prácticas, los criterios de calidad y las lecciones aprendidas para facilitar la transferencia a otros equipos.</p><p>Cuando la solución demuestra resultados, colaboro en la definición de las condiciones necesarias para llevarla a nuevos públicos, programas, facultades, sedes o modalidades. Esto incluye fortalecer capacidades internas, formar facilitadores, distribuir responsabilidades y establecer mecanismos de gobernanza y seguimiento.</p><p>Mi función consiste en convertir una experiencia exitosa en una capacidad institucional sostenible, transferible y susceptible de escalar.</p><h4>2. QUÉ HABILIDADES APLICO</h4><p>Mejora continua. Pensamiento iterativo. Gestión del cambio. Gestión del conocimiento. Documentación de buenas prácticas. Estandarización. Diseño para la escalabilidad. Transferencia de capacidades. Formación de formadores. Gestión de calidad. Gestión de versiones. Análisis de sostenibilidad. Adaptación organizacional. Planificación de expansión. Evaluación de impacto. Desarrollo de personas. Delegación progresiva. Construcción de autonomía. Comunicación del cambio. Gestión de resistencia. Consolidación de comunidades de práctica. Visión de largo plazo.</p><h4>3. QUÉ DECISIÓN FACILITA</h4><ol class="space-y-1"><li>Qué conservar, mejorar, documentar y estandarizar.</li><li>Qué capacidades transferir.</li><li>Qué recursos requiere la continuity.</li><li>Si la solución es sostenible y escalable.</li><li>Qué elementos replicar o adaptar.</li><li>Qué fases tendrá la expansión.</li><li>Qué criterios determinarán el avance.</li></ol><h4>PREGUNTA DE DECISIÓN</h4><p>¿Qué debemos conservar, qué debemos mejorar y qué condiciones necesitamos para ampliar la solución sin perder calidad ni pertinencia?</p><h4>RESULTADO ESPERADO</h4><p>Una solución mejorada, documentada y transferible, con condiciones claras para su sostenibilidad y escalamiento.</p>',products:[{cat:'MEJORA CONTINUA',items:['Informe de lecciones aprendidas — Funcionamiento, dificultades, factores de éxito, decisiones y recomendaciones.','Backlog o cartera priorizada de mejoras — Propuesta, evidencia, impacto, esfuerzo, prioridad, responsable y estado.','Plan de mejora continua — Objetivos, acciones, indicadores, responsables, plazos, recursos y seguimiento.','Nueva versión del programa o experiencia — Contenidos, secuencias, actividades, recursos y evaluaciones ajustados.']},{cat:'OPERACIÓN Y TRANSFERENCIA',items:['Manual de operación — Procesos, responsables, flujos, frecuencias, controles, soporte e incidencias.','Kit de escalamiento — Plantillas, guías, estándares, recursos, adaptación y lista de verificación.','Modelo de transferencia de capacidades — Facilitadores, administradores, mentoría, certificación, comunidades y soporte.']},{cat:'FORMACIÓN Y EXPANSIÓN',items:['Plan de formación de formadores — Perfil, competencias, programa, prácticas, evaluación, acompañamiento y recertificación.','Plan de escalamiento — Públicos, sedes, modalidades, fases, requisitos, metas y riesgos.','Matriz de adaptación contextual — Componentes invariables, adaptables, personalización, autorizaciones y límites.']},{cat:'SOSTENIBILIDAD',items:['Modelo de gobernanza y sostenibilidad — Propietario, operación, financiamiento, actualización, calidad, tecnología y evaluación.','Análisis de viabilidad para escalar — Viabilidad académica, operativa, tecnológica, económica, equipo y riesgos.','Hoja de ruta de expansión — Fases, hitos, fechas, responsables, resultados y condiciones de avance.','Informe comparativo entre versiones o cohortes — Resultados, cambios, mejoras y pendientes.','Entregable integrador recomendado: solución mejorada, documentada y lista para escalar.']}]}
+  ];
+
+  const stageColors = ['#22d3ee','#60a5fa','#c084fc','#34d399','#fb7185'];
+  let currentStageIndex = 0;
+
+  function selectStage(index){
+    currentStageIndex = index;
+    const stage = valueStages[index];
+    const color = stageColors[index];
+    document.getElementById('products-stage-nav').innerHTML = valueStages.map((x,j)=>{
+      const active = j===index;
+      const col = stageColors[j];
+      return `<button type="button" onclick="selectStage(${j})" class="w-full rounded-xl sm:rounded-2xl border p-3 sm:p-4 text-center flex flex-col items-center justify-center transition-all duration-300 ${active?'active scale-[1.02] shadow-xl ring-2':'hover:-translate-y-1'}" style="border-color:${col}66; background:${col}${active?'25':'0a'}; --tw-ring-color:${col}"><span class="text-xl sm:text-2xl md:text-3xl font-black mb-1" style="color:${col}">${x.n}</span><span class="text-xs sm:text-sm md:text-base font-bold text-white leading-tight mb-1">${x.t}</span><span class="text-[10px] sm:text-xs text-slate-300/80 leading-snug font-normal max-w-[200px] hidden sm:block">${x.desc}</span></button>`;
+    }).join('');
+    let html = `<div class="grid gap-6 sm:gap-8 lg:grid-cols-[.9fr_1.1fr]" style="--stage-color: ${color};"><div class="stage-narrative"><p class="text-xl sm:text-2xl md:text-3xl font-black tracking-wide mb-2 transition-colors duration-300" style="color:${color}">${stage.s}</p><h3 class="mt-2 text-2xl sm:text-3xl font-black leading-tight text-white">${stage.sub}</h3><div class="mt-4 sm:mt-5 rounded-xl sm:rounded-2xl border border-white/10 bg-slate-900/90 p-4 sm:p-5 text-sm md:text-base font-medium leading-relaxed text-slate-200">${stage.intro}</div><div class="mt-5 sm:mt-6 space-y-3 sm:space-y-4 text-sm md:text-base leading-relaxed text-slate-300">${stage.body}</div></div><div><div class="mb-5 sm:mb-6"><p class="text-[10px] sm:text-xs font-black tracking-[0.18em] transition-colors duration-300" style="color:${color}">PRODUCTOS DE LA ETAPA</p><h3 class="mt-1 text-xl sm:text-2xl font-black text-white">Productos que puedo articular con el equipo</h3></div>${stage.products.map(cat=>`<div class="mb-5 sm:mb-6 rounded-xl sm:rounded-2xl border border-white/10 bg-white/[.03] p-4 sm:p-5"><p class="mb-2 sm:mb-3 text-[10px] sm:text-xs font-bold uppercase tracking-wider transition-colors duration-300" style="color:${color}">${cat.cat}</p><ul class="space-y-2">${cat.items.map(item=>`<li class="flex items-start gap-2 sm:gap-3 rounded-lg border border-white/5 bg-slate-950/60 px-3 sm:px-4 py-2.5 sm:py-3 text-xs md:text-sm text-slate-200"><span class="text-xs mt-0.5 transition-colors duration-300 shrink-0" style="color:${color}">◆</span><span class="leading-relaxed">${item}</span></li>`).join('')}</ul></div>`).join('')}</div></div>`;
+    document.getElementById('products-detail').innerHTML = html;
+    if(window.innerWidth<768){document.getElementById('products-detail').scrollIntoView({behavior:'smooth',block:'start'})}
+  }
+
+  window.addEventListener('DOMContentLoaded',()=>{selectStage(0)});
+
+  const getEl = id => document.getElementById(id);
+
+  function getStepAnimatedSvg(index,color,sizeClass="w-8 h-8"){
+    const svgs=[
+      `<svg class="${sizeClass}" viewBox="0 0 40 40" fill="none" style="color:${color}"><circle cx="20" cy="20" r="16" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4" class="animate-spin" style="animation-duration: 10s;"/><circle cx="20" cy="20" r="8" fill="currentColor" fill-opacity="0.25" class="animate-ping" style="animation-duration: 2.5s;"/><path d="M12 20h4l2-5 3 10 2-5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+      `<svg class="${sizeClass}" viewBox="0 0 40 40" fill="none" style="color:${color}"><rect x="8" y="10" width="22" height="4" rx="2" fill="currentColor" fill-opacity="0.9"/><rect x="8" y="18" width="16" height="4" rx="2" fill="currentColor" fill-opacity="0.6"/><rect x="8" y="26" width="11" height="4" rx="2" fill="currentColor" fill-opacity="0.35"/><circle cx="32" cy="12" r="3" fill="currentColor" class="animate-ping"/><path d="M24 26l3 3 7-7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+      `<svg class="${sizeClass}" viewBox="0 0 40 40" fill="none" style="color:${color}"><circle cx="20" cy="20" r="15" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3" class="animate-spin" style="animation-duration: 12s;"/><path d="M11 29l5-14 13-5-5 14-13 5z" stroke="currentColor" stroke-width="1.5" fill="currentColor" fill-opacity="0.2"/><circle cx="20" cy="20" r="3" fill="currentColor" class="animate-pulse"/></svg>`,
+      `<svg class="${sizeClass}" viewBox="0 0 40 40" fill="none" style="color:${color}"><path d="M16 10h8M20 10v6l7 12A2 2 0 0 1 25.3 31H14.7A2 2 0 0 1 13 28l7-12v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="24" r="2" fill="currentColor" class="animate-ping" style="animation-duration: 2s;"/><circle cx="16" cy="27" r="1.5" fill="currentColor" class="animate-pulse"/><circle cx="23" cy="26" r="1.5" fill="currentColor" class="animate-pulse"/></svg>`,
+      `<svg class="${sizeClass}" viewBox="0 0 40 40" fill="none" style="color:${color}"><path d="M20 6c4 0 9 4 10 11l-5 5-6-6 1-10z" fill="currentColor" fill-opacity="0.25" stroke="currentColor" stroke-width="1.5"/><path d="M20 6c-4 0-9 4-10 11l5 5 6-6-1-10z" fill="currentColor" fill-opacity="0.25" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="14" r="2.5" fill="currentColor"/><path d="M14 23l-5 5M26 23l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M20 24v8" stroke="currentColor" stroke-width="2" stroke-dasharray="2 2" class="animate-ping" style="animation-duration: 1.5s;"/></svg>`,
+      `<svg class="${sizeClass}" viewBox="0 0 40 40" fill="none" style="color:${color}"><rect x="9" y="22" width="5" height="10" rx="1.5" fill="currentColor" fill-opacity="0.4"/><rect x="17" y="16" width="5" height="16" rx="1.5" fill="currentColor" fill-opacity="0.7"/><rect x="25" y="10" width="5" height="22" rx="1.5" fill="currentColor"/><path d="M7 21 Q 18 13, 31 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 3"/><circle cx="31" cy="8" r="3" fill="currentColor" class="animate-ping"/></svg>`,
+      `<svg class="${sizeClass}" viewBox="0 0 40 40" fill="none" style="color:${color}"><path d="M20 7a13 13 0 1 0 13 13" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="32 12" class="animate-spin" style="animation-duration: 5s; transform-origin: 20px 20px;"/><polygon points="33,14 37,21 29,21" fill="currentColor"/><circle cx="20" cy="20" r="4" fill="currentColor" class="animate-pulse"/></svg>`
+    ];
+    return svgs[index]||'';
+  }
+
+  const cycleSteps=[
+    ['Diagnosticar','stethoscope','Identificar la situación actual, recopilar métricas clave e identificar cuellos de botella u oportunidades de valor.','#06b6d4'],
+    ['Priorizar','list-checks','Evaluar el impacto vs. esfuerzo de cada iniciativa para enfocar los recursos en lo que genera mayor retorno.','#3b82f6'],
+    ['Diseñar','pen-tool','Co-crear la solución técnica y conceptual, definiendo arquitecturas, flujos de trabajo y estándares requeridos.','#a855f7'],
+    ['Prototipar','flask-conical','Construir versiones mínimas viables para experimentar rápido, validar hipótesis y reducir riesgos.','#ec4899'],
+    ['Implementar','rocket','Desplegar la solución en producción, gestionar el cambio operacional e impulsar la adopción efectiva.','#f59e0b'],
+    ['Medir','bar-chart-2','Monitorear métricas de desempeño y comprobar el impacto real contra la línea base inicial.','#10b981'],
+    ['Mejorar','refresh-cw','Ajustar, optimizar y estandarizar las lecciones aprendidas para reiniciar la siguiente iteración de valor.','#f43f5e']
+  ];
+  let cycleIndex=0,cyclePlaying=true,cycleTimer;
+
+  function renderCycle(){
+    const s=cycleSteps[cycleIndex];
+    const badge=getEl('cycleBadge');if(badge)badge.textContent=`Paso ${cycleIndex+1} de ${cycleSteps.length}`;
+    const title=getEl('cycleTitle');if(title)title.textContent=s[0];
+    const desc=getEl('cycleDescription');if(desc)desc.textContent=s[2];
+    const icon=getEl('cycleIcon');
+    if(icon){icon.innerHTML=getStepAnimatedSvg(cycleIndex,s[3],'h-9 w-9');icon.style.color=s[3];icon.style.borderColor=`${s[3]}80`;icon.style.backgroundColor=`${s[3]}20`}
+    const arc=getEl('cycleArc');
+    if(arc){const seg=1162/cycleSteps.length;arc.style.stroke=s[3];arc.style.strokeDashoffset=1162-(seg*(cycleIndex+1))}
+    const dots=getEl('cycleDots');
+    if(dots)dots.innerHTML=cycleSteps.map((x,i)=>`<button type="button" aria-label="Ir a ${x[0]}" class="h-2 rounded-full ${i===cycleIndex?'w-6':'w-2 bg-slate-700'}" style="${i===cycleIndex?'background:'+x[3]:''}" onclick="cycleIndex=${i};renderCycle()"></button>`).join('');
+    const nodes=getEl('cycleNodes');
+    if(nodes){nodes.innerHTML=cycleSteps.map((x,i)=>{const a=-Math.PI/2+i*2*Math.PI/7;return `<button type="button" onclick="cycleIndex=${i};renderCycle()" class="pointer-events-auto absolute -translate-x-1/2 -translate-y-1/2 rounded-2xl border-2 bg-slate-900 p-3 text-xs font-bold ${i===cycleIndex?'scale-125':''}" style="left:${50+42*Math.cos(a)}%;top:${50+42*Math.sin(a)}%;color:${x[3]};border-color:${x[3]}80"><div class="mx-auto mb-1 flex justify-center">${getStepAnimatedSvg(i,x[3],'h-6 w-6')}</div>${x[0]}</button>`}).join('')}
+    const pipeline=getEl('cyclePipeline');
+    if(pipeline){pipeline.innerHTML=cycleSteps.map((x,i)=>`<button type="button" onclick="cycleIndex=${i};renderCycle()" class="rounded-xl border px-3 py-2 text-sm font-bold ${i===cycleIndex?'is-active':''}" style="color:${x[3]};border-color:${x[3]}80"><div class="mx-auto mb-1 flex justify-center">${getStepAnimatedSvg(i,x[3],'h-5 w-5')}</div><span>${i+1}. ${x[0]}</span></button>`).join('')}
+    const lBadge=getEl('linearBadge');if(lBadge)lBadge.textContent=`Paso ${cycleIndex+1} de ${cycleSteps.length}`;
+    const lTitle=getEl('linearTitle');if(lTitle)lTitle.textContent=s[0];
+    const lDesc=getEl('linearDescription');if(lDesc)lDesc.textContent=s[2];
+    const lIcon=getEl('linearIcon');
+    if(lIcon){lIcon.innerHTML=getStepAnimatedSvg(cycleIndex,s[3],'h-8 w-8');lIcon.style.color=s[3]}
+    if(window.lucide)lucide.createIcons();
+  }
+
+  function startCycle(){
+    clearInterval(cycleTimer);
+    cycleTimer=setInterval(()=>{cycleIndex=(cycleIndex+1)%cycleSteps.length;renderCycle()},3500);
+  }
+
+  window.addEventListener('DOMContentLoaded',()=>{
+    if(getEl('cyclePlay')){getEl('cyclePlay').onclick=()=>{cyclePlaying=!cyclePlaying;getEl('cyclePlay').querySelector('span').textContent=cyclePlaying?'Pausar ciclo':'Reanudar ciclo';cyclePlaying?startCycle():clearInterval(cycleTimer)}}
+    if(getEl('cyclePrev')){getEl('cyclePrev').onclick=()=>{cycleIndex=(cycleIndex+cycleSteps.length-1)%cycleSteps.length;renderCycle()}}
+    if(getEl('cycleNext')){getEl('cycleNext').onclick=()=>{cycleIndex=(cycleIndex+1)%cycleSteps.length;renderCycle()}}
+    if(getEl('cycleLayout')){getEl('cycleLayout').onclick=()=>{const lin=getEl('cycleLinear').classList.toggle('hidden');getEl('cycleCircular').classList.toggle('hidden');getEl('cycleLayout').querySelector('span').textContent=lin?'Vista circular':'Vista lineal'}}
+    renderCycle();
+    startCycle();
+  });
+</script>
+</body>
+</html>
